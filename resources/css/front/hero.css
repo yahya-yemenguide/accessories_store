@@ -49,3 +49,22 @@
 }
 @media(max-width:359px){.ys-hero{height:505px}.ys-hero__content{right:12px;left:12px}.ys-hero__title{font-size:26px}.ys-hero__copy{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.ys-hero__slide{transition:none}.ys-hero__photo{transition:none;transform:none!important}.ys-hero__slide.is-current .ys-hero__eyebrow,.ys-hero__slide.is-current .ys-hero__title span,.ys-hero__slide.is-current .ys-hero__title strong,.ys-hero__slide.is-current .ys-hero__copy,.ys-hero__slide.is-current .ys-hero__cta{animation:none;opacity:1;transform:none;filter:none}.ys-hero.is-playing .ys-hero__dot.is-current .ys-hero__dot-track{animation:none;width:100%}}
+
+/* Version 6: keep product imagery and real text readable on all screens. */
+.ys-hero__slide:not(.is-current){pointer-events:none}
+.ys-hero__dot:focus-visible,.ys-hero__cta:focus-visible{outline:3px solid #ffe0a3;outline-offset:4px}
+@media(max-width:767px){.ys-hero__photo{object-position:center 38%}.ys-hero__content{bottom:64px}.ys-hero__controls{bottom:13px}.ys-hero__title{font-size:clamp(28px,7vw,41px)}}
+
+
+/* V8 image legibility refinement — no replacements to image assets or carousel timing */
+.ys-hero__photo {filter:saturate(1.035) contrast(1.045)!important;}
+/* Keep shadow local to the copy, avoiding a broad hazy wash over merchandise. */
+@media(min-width:768px){
+ .ys-hero__shade {background:linear-gradient(270deg,rgba(31,12,8,.39) 0%,rgba(32,12,7,.18) 36%,transparent 59%)!important;}
+ .ys-hero__content {text-shadow:0 2px 14px #18090450;}
+}
+@media(max-width:767px){
+ .ys-hero {max-width:100vw;width:100%;overflow:hidden;}
+ .ys-hero__picture,.ys-hero__slide {max-width:100%;}
+ .ys-hero__shade {background:linear-gradient(0deg,#26100bea 0%,rgba(37,15,10,.84) 22%,rgba(38,16,12,.24) 51%,transparent 75%)!important;}
+}

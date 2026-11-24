@@ -3,8 +3,8 @@
   <div class="sidebar-panel" role="dialog" aria-modal="true" aria-labelledby="sidebarTitle" tabindex="-1">
     <div class="sidebar-top">
       <div class="sidebar-brand-frame">
-        <img class="sidebar-logo" src="{{ asset('assets/images/front/yourstore-reference-logo.png') }}" alt="YourStore" width="244" height="62">
-        <span id="sidebarTitle" class="visually-hidden">قائمة المتجر</span>
+        <span class="kurdi-sidebar-brand"><img class="kurdi-sidebar-brand__mark" src="{{ asset('assets/images/front/dar-alkurdi-mark.png') }}" alt="" width="58" height="58"><span><strong>دار الكردي</strong><small>للإكسسوارات</small></span></span>
+        <span id="sidebarTitle" class="visually-hidden">قائمة دار الكردي للإكسسوارات</span>
       </div>
       <button type="button" class="sidebar-close" id="sidebarCloseBtn" aria-label="إغلاق القائمة"><span class="close-bars" aria-hidden="true"></span></button>
     </div>
@@ -32,12 +32,16 @@
     </nav>
     <div class="sidebar-foot">
       <div class="sidebar-ornament" aria-hidden="true"><span>✧</span><i class="bi bi-heart"></i><span>✧</span></div>
-      <div class="sidebar-social">
-        <a href="#" aria-label="إنستغرام"><i class="bi bi-instagram"></i></a>
-        <a href="#" aria-label="تيك توك"><i class="bi bi-tiktok"></i></a>
-        <a href="#" aria-label="سناب شات"><i class="bi bi-snapchat"></i></a>
-        <a href="#" aria-label="واتساب"><i class="bi bi-whatsapp"></i></a>
-      </div>
+      <div class="sidebar-social"><a href="#" aria-label="إنستغرام"><i class="bi bi-instagram"></i></a><a href="#" aria-label="تيك توك"><i class="bi bi-tiktok"></i></a><a href="#" aria-label="سناب شات"><i class="bi bi-snapchat"></i></a><a href="#" aria-label="واتساب"><i class="bi bi-whatsapp"></i></a></div>
     </div>
   </div>
 </aside>
+<style>
+.kurdi-sidebar-brand{display:flex;direction:rtl;align-items:center;gap:5px;justify-content:center;max-width:100%;white-space:nowrap;color:#442317}
+.kurdi-sidebar-brand__mark{height:47px;width:47px;object-fit:contain;flex:none;filter:drop-shadow(0 2px 4px #8a501b3b)}
+.kurdi-sidebar-brand>span{display:flex;flex-direction:column;align-items:center;line-height:1.2}
+.kurdi-sidebar-brand strong{font-family:'Tajawal',sans-serif;font-size:20px;font-weight:900}
+.kurdi-sidebar-brand small{font:700 11px 'Tajawal',sans-serif;color:#ac7339}
+.sidebar-brand-frame{width:min(62vw,238px)!important}
+@media(max-width:360px){.kurdi-sidebar-brand__mark{width:39px;height:39px}.kurdi-sidebar-brand strong{font-size:17px}}
+</style>
