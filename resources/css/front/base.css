@@ -1,0 +1,177 @@
+:root {
+    --front-bg: #f8efe7;
+    --front-panel: #fff9f4;
+    --front-panel-2: #fcf3eb;
+    --front-brown: #4a271a;
+    --front-brown-deep: #2e160f;
+    --front-gold: #c99744;
+    --front-gold-soft: #e1bf84;
+    --front-text: #3d261d;
+    --front-muted: #907565;
+    --front-line: #ead7c6;
+    --front-shadow: 0 14px 34px rgba(91, 53, 32, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body.front-body {
+    font-family: "Tajawal", sans-serif;
+    background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.75), transparent 28%),
+        linear-gradient(180deg, #fffaf5 0%, var(--front-bg) 100%);
+    color: var(--front-text);
+    overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button, input { font-family: inherit; }
+
+.front-page-shell {
+    min-height: 100vh;
+    position: relative;
+}
+
+.front-main {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 14px 34px;
+}
+
+.hero-preview-wrap { padding-top: 18px; }
+
+.hero-preview-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 244, 233, 0.92)),
+        linear-gradient(180deg, #fbeadd, #f4dfd0);
+    box-shadow: var(--front-shadow);
+    border: 1px solid rgba(201, 151, 68, 0.16);
+    padding: 24px 18px;
+}
+
+.hero-preview-card::before,
+.hero-preview-card::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 151, 68, 0.15), transparent 65%);
+    pointer-events: none;
+}
+
+.hero-preview-card::before { top: -60px; left: -40px; }
+.hero-preview-card::after { bottom: -70px; right: -50px; }
+
+.hero-preview-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 0 16px;
+    border-radius: 999px;
+    background: var(--front-brown);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hero-pill.light {
+    background: rgba(201, 151, 68, 0.15);
+    color: var(--front-brown);
+    border: 1px solid rgba(201, 151, 68, 0.18);
+}
+
+.hero-preview-content { display: grid; gap: 20px; }
+
+.hero-copy h1 {
+    margin: 0 0 12px;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    line-height: 1.1;
+    color: var(--front-brown-deep);
+    font-weight: 800;
+}
+
+.hero-copy p {
+    margin: 0 0 20px;
+    color: var(--front-muted);
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 560px;
+}
+
+.hero-action {
+    min-width: 148px;
+    height: 48px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--front-brown) 0%, #6a3720 100%);
+    color: #fff8f2;
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 0 12px 24px rgba(74, 39, 26, 0.18);
+}
+
+.hero-ornaments {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 14px;
+    min-height: 160px;
+}
+
+.mini-card {
+    width: 92px;
+    height: 110px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--front-brown);
+    border: 1px solid rgba(201, 151, 68, 0.14);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(252, 243, 235, 0.96));
+    box-shadow: var(--front-shadow);
+}
+
+.mini-card i {
+    font-size: 30px;
+    color: var(--front-gold);
+}
+
+.mini-card.two {
+    transform: translateY(-16px);
+    height: 128px;
+}
+
+.mini-card.three {
+    transform: translateY(8px);
+    width: 86px;
+}
+
+@media (min-width: 768px) {
+    .front-main { padding: 0 20px 42px; }
+    .hero-preview-card { padding: 34px 28px; }
+    .hero-preview-content {
+        grid-template-columns: 1.05fr .65fr;
+        align-items: center;
+    }
+}
