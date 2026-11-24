@@ -1,13 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-
-    if (searchInput) {
-        searchInput.addEventListener('focus', () => {
-            searchInput.closest('.search-bar-form')?.classList.add('is-focused');
-        });
-
-        searchInput.addEventListener('blur', () => {
-            searchInput.closest('.search-bar-form')?.classList.remove('is-focused');
-        });
-    }
+  // Search is visual-only until the products/search route is implemented.
+  const form = document.getElementById('frontSearchForm');
+  form?.addEventListener('submit', event => event.preventDefault());
 });
