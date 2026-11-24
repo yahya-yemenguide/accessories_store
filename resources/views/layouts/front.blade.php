@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}">
 
-    @vite([
-        'resources/css/front/base.css',
-        'resources/css/front/header.css',
-        'resources/css/front/sidebar.css',
-        'resources/js/front/header.js',
-        'resources/js/front/sidebar.js',
-    ])
+    {{-- XAMPP preview: read the existing front CSS directly, without Vite/npm. --}}
+    @foreach (['base.css', 'header.css', 'sidebar.css'] as $styleFile)
+        <style data-front-css="{{ $styleFile }}">
+            {!! file_get_contents(resource_path('css/front/' . $styleFile)) !!}
+        </style>
+    @endforeach
 
     @stack('styles')
 </head>
@@ -30,6 +29,12 @@
             @yield('content')
         </main>
     </div>
+
+    @foreach (['header.js', 'sidebar.js'] as $scriptFile)
+        <script data-front-js="{{ $scriptFile }}">
+            {!! file_get_contents(resource_path('js/front/' . $scriptFile)) !!}
+        </script>
+    @endforeach
 
     @stack('scripts')
 </body>
