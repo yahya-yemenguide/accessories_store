@@ -1,0 +1,39 @@
+/* DAR AL-KURDI · Signature Edition V2 · isolated, image-free luxury design */
+.dar-why{--dw-ink:#47271b;--dw-gold:#c39455;--dw-cream:#fff8f0;position:relative;isolation:isolate;direction:rtl;color:var(--dw-ink);max-width:1510px;margin:18px auto 36px;padding:clamp(24px,3vw,42px) clamp(13px,3vw,46px) 20px;overflow:hidden;border-radius:30px;border:1px solid #dfc5a2;background:radial-gradient(ellipse 65% 75% at 52% -35%,rgba(255,255,255,.99),transparent 78%),radial-gradient(ellipse 25% 54% at 3% 72%,rgba(218,170,105,.15),transparent 100%),radial-gradient(ellipse 29% 60% at 96% 20%,rgba(223,182,131,.16),transparent 100%),linear-gradient(140deg,#fffaf5 4%,#f3e6d8 52%,#fff9f2 100%);box-shadow:0 23px 54px rgba(74,42,24,.12),inset 0 1px rgba(255,255,255,.95)}
+.dar-why::before{content:"";pointer-events:none;position:absolute;inset:9px;border:1px solid rgba(183,125,64,.28);border-radius:23px;z-index:0}
+.dar-why::after{content:"";position:absolute;left:50%;bottom:-95px;transform:translateX(-50%);height:190px;width:65%;background:radial-gradient(ellipse,rgba(196,137,67,.18),transparent 70%);pointer-events:none;z-index:0}
+.dar-why__container{position:relative;z-index:1}
+.dar-why__header{text-align:center;margin:0 auto 27px;max-width:840px}
+.dar-why__eyebrow{display:inline-block;color:#af7b42;font-size:11px;font-weight:800;letter-spacing:.065em}
+.dar-why__header h2{font-family:'Tajawal',sans-serif;font-size:clamp(26px,3.5vw,47px);line-height:1.35;font-weight:900;color:#4b291d;margin:6px 0 2px;text-shadow:0 1px 0 rgba(255,255,255,.85)}
+.dar-why__header h2 span{color:#84502c}
+.dar-why__header p{color:#96765d;font-size:clamp(12px,1.15vw,15px);font-weight:600;margin:4px 0 11px}
+.dar-why__signature{display:flex;align-items:center;justify-content:center;gap:14px;color:#bd8945;font-size:22px}
+.dar-why__signature i{height:1px;width:clamp(55px,8vw,125px);background:linear-gradient(90deg,transparent,#c49451,transparent)}
+.dar-why__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.8vw,24px);perspective:1100px;padding:5px 4px 16px}
+.dar-why__card{--dw-rx:0deg;--dw-ry:0deg;--dw-lift:0px;position:relative;min-width:0;min-height:294px;padding:34px 18px 29px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;isolation:isolate;overflow:hidden;border-radius:27px;border:1px solid #d6b07b;background:radial-gradient(ellipse 65% 46% at 45% 2%,rgba(255,255,255,.93),transparent 82%),linear-gradient(145deg,rgba(255,254,252,.97),#f7ecdf 61%,#ead4bb);box-shadow:inset 0 0 0 3px rgba(255,251,242,.92),inset 0 0 0 4px rgba(200,151,89,.25),0 17px 28px rgba(87,53,33,.15),0 2px 0 #fff;transform:perspective(950px) rotateX(var(--dw-rx)) rotateY(var(--dw-ry)) translateY(var(--dw-lift));transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease,border-color .5s ease;backface-visibility:hidden}
+.dar-why__card::before{content:"";position:absolute;inset:8px;border:1px solid rgba(215,179,132,.49);border-radius:19px;pointer-events:none}
+.dar-why__card::after{content:"";position:absolute;inset:-85% -85%;background:linear-gradient(115deg,transparent 43%,rgba(255,255,255,.08) 46%,rgba(255,255,255,.82) 50%,rgba(255,228,177,.18) 53%,transparent 58%);transform:translateX(55%);opacity:0;pointer-events:none;z-index:3}
+.dar-why__card.is-lit::after,.dar-why__card:hover::after{opacity:.84;animation:dw-signature-sweep 1.35s ease-out both}
+.dar-why__card.is-lit,.dar-why__card:hover{--dw-lift:-9px;border-color:#b37d3e;box-shadow:inset 0 0 0 3px rgba(255,252,244,.97),inset 0 0 0 4px rgba(211,167,108,.4),0 25px 37px rgba(90,46,24,.22),0 0 22px rgba(218,169,94,.3)}
+.dar-why__card-light{position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 50% 26%,rgba(255,246,214,.68),transparent 45%)}
+.dar-why__emblem{position:relative;display:grid;place-items:center;flex:none;width:128px;height:122px;transform:translateZ(26px);margin:0 0 22px}
+.dar-why__emblem::before{content:"";position:absolute;inset:9px 10px 4px;border-radius:50%;background:radial-gradient(circle at 30% 20%,#fffdf1,#f6ddb0 43%,#ca9759 78%,#9c6839);border:1px solid #fff8e6;box-shadow:inset 0 2px 4px #fff, inset 0 -12px 17px rgba(110,62,28,.24),0 13px 22px rgba(119,73,35,.22),0 0 0 5px rgba(255,255,255,.6),0 0 0 6px rgba(199,151,83,.47)}
+.dar-why__emblem::after{content:"";position:absolute;inset:18px 19px 13px;border-radius:50%;border:1px solid rgba(255,253,238,.9);box-shadow:inset 0 0 0 1px rgba(163,109,51,.15)}
+.dar-why__emblem-shine{position:absolute;inset:15px;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.74),transparent 50%);transform:rotate(-20deg)}
+.dar-why__emblem>i{position:relative;z-index:2;font-size:53px;line-height:1;color:#64381e;text-shadow:0 2px 1px rgba(255,248,215,.84);filter:drop-shadow(0 2px 2px rgba(99,51,20,.15));transition:transform .65s cubic-bezier(.2,.85,.25,1),filter .5s}
+.dar-why__card.is-lit .dar-why__emblem>i,.dar-why__card:hover .dar-why__emblem>i{transform:translateY(-4px) scale(1.12);filter:drop-shadow(0 4px 5px rgba(125,69,29,.28))}
+.dar-why__card-copy{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;transform:translateZ(15px);flex:1;width:100%}
+.dar-why__card h3{font:900 clamp(18px,1.65vw,25px)/1.4 'Tajawal',sans-serif;color:#48261a;margin:0 0 9px}
+.dar-why__fine-rule{width:64px;height:1px;margin:0 0 12px;background:linear-gradient(90deg,transparent,#bb8c4a,transparent);position:relative}
+.dar-why__fine-rule::after{content:"";position:absolute;left:50%;top:50%;height:5px;width:5px;transform:translate(-50%,-50%) rotate(45deg);background:#c5985d}
+.dar-why__card p{font:600 clamp(12px,1vw,15px)/1.7 'Tajawal',sans-serif;color:#8b6750;margin:0;max-width:232px}
+.dar-why__card-diamond{position:absolute;bottom:12px;font-size:11px;color:#c79a59;text-shadow:0 0 7px rgba(240,180,100,.5)}
+.dar-why__footer{display:flex;align-items:center;justify-content:center;gap:14px;color:#bc8b46;font-size:19px}
+.dar-why__footer i{width:min(19%,145px);height:1px;background:linear-gradient(90deg,transparent,#c79a5c,transparent)}
+@keyframes dw-signature-sweep{from{transform:translateX(55%)}to{transform:translateX(-55%)}}
+@media(max-width:1050px){.dar-why__grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px;margin:auto}}
+@media(max-width:600px){.dar-why{padding:26px 12px 17px;margin:12px 8px 25px;border-radius:23px}.dar-why::before{inset:7px;border-radius:17px}.dar-why__header{margin-bottom:18px}.dar-why__header h2{font-size:clamp(24px,6.4vw,33px)}.dar-why__header p{font-size:12px;line-height:1.6}.dar-why__grid{gap:10px;padding:4px 0 14px}.dar-why__card{padding:20px 8px 21px;min-height:250px;border-radius:20px}.dar-why__card::before{inset:5px;border-radius:15px}.dar-why__emblem{height:94px;width:94px;margin-bottom:18px}.dar-why__emblem::before{inset:9px 9px 4px}.dar-why__emblem::after{inset:15px}.dar-why__emblem>i{font-size:37px}.dar-why__card h3{font-size:clamp(15px,4vw,19px);margin-bottom:7px}.dar-why__card p{font-size:11px;line-height:1.6}.dar-why__fine-rule{margin-bottom:10px}}
+@media(max-width:360px){.dar-why__grid{grid-template-columns:1fr;max-width:295px}.dar-why__card{min-height:245px}.dar-why__emblem{height:102px;width:102px}}
+@media(hover:none){.dar-why__card{transform:none!important}.dar-why__card.is-lit{--dw-lift:0px}}
+@media(prefers-reduced-motion:reduce){.dar-why *, .dar-why::after{animation:none!important;transition:none!important}.dar-why__card{transform:none!important}}

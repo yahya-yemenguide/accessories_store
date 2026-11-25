@@ -31,11 +31,7 @@
                 <article class="ak-best__card {{ $i < 3 ? 'ak-best__card--royal' : '' }}" style="--ak-order: {{ $i }};" aria-label="{{ $product['name'] }}">
                     <div class="ak-best__photo">
                         <img src="{{ asset('assets/images/front/products/' . $product['image']) }}" alt="{{ $product['name'] }}" loading="lazy" width="560" height="730">
-                        @if($i < 3)
-                            <div class="ak-best__crown" aria-label="من المجموعة المتصدرة"><i class="bi bi-stars" aria-hidden="true"></i><span>{{ ['01','02','03'][$i] }}</span></div>
-                        @else
-                            <span class="ak-best__number" aria-hidden="true">{{ str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
-                        @endif
+                        <span class="ak-best__number" aria-label="الترتيب {{ $i + 1 }}">{{ str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) }}</span>
                         <span class="ak-best__glint" aria-hidden="true">✦</span>
                     </div>
                     <div class="ak-best__details">
