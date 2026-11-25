@@ -1,0 +1,40 @@
+/* DAR AL-KURDI / ROYAL CHAMPAGNE SCROLLBAR
+   Only the main PAGE scrollbar. Does not touch the products/categories horizontal rails.
+   Chrome / Edge / Safari: native WebKit scrollbar styling.
+   Firefox: graceful, simpler fallback. */
+
+/* Desktop: slim, polished champagne-gold thumb and pearl track. */
+@media (hover: hover) and (pointer: fine) {
+  html::-webkit-scrollbar { width: 13px; }
+  html::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #e8d4bf 0%, #fff8ef 36%, #fffdf7 60%, #e5c9a6 100%);
+    border-left: 1px solid rgba(158, 102, 53, .18);
+    box-shadow: inset 1px 0 4px rgba(116, 69, 31, .09);
+  }
+  html::-webkit-scrollbar-thumb {
+    min-height: 65px;
+    border-radius: 100px;
+    border: 3px solid #f6ebdf;
+    background: linear-gradient(90deg,
+      #9d642c 0%, #c18a42 12%, #f9dca0 32%,
+      #fff8dd 48%, #eec780 62%, #b27b35 83%, #8d5428 100%);
+    box-shadow: inset 0 0 0 1px rgba(255, 252, 233, .7),
+                inset 1px 0 2px rgba(255, 255, 255, .8),
+                0 0 7px rgba(179, 123, 50, .23);
+  }
+  html::-webkit-scrollbar-thumb:hover {
+    border-color: #f4e3cc;
+    background: linear-gradient(90deg,
+      #945521 0%, #c18b3c 14%, #ffe4a6 34%,
+      #fffbed 49%, #f6d08b 64%, #bd863c 85%, #965a28 100%);
+  }
+  html::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(90deg, #895020, #e0ad5a 25%, #fff5d0 52%, #d4a050 78%, #8e5424);
+  }
+  html::-webkit-scrollbar-corner { background: #f7eee4; }
+}
+/* Firefox native controls have no gradient-thumb API; keep a matching gold tone. */
+@supports (-moz-appearance: none) {
+  html { scrollbar-color: #c3995b #f9efe5; scrollbar-width: thin; }
+}
+/* On touch devices, keep the platform's small overlay scrollbar and natural gestures. */

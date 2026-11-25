@@ -2,11 +2,11 @@
 @php
     $featured = [
         ['name' => 'أقراط فيونكة كريستال', 'price' => '١٢٬٥٠٠', 'image' => 'featured-1.webp', 'tag' => 'وصل حديثًا'],
-        ['name' => 'عقد زهرة اللؤلؤ', 'price' => '١٥٬٠٠٠', 'image' => 'featured-2.webp', 'tag' => 'لمسة راقية'],
-        ['name' => 'ساعة ذهبية أنيقة', 'price' => '٣٢٬٠٠٠', 'image' => 'featured-3.webp', 'tag' => 'مختاراتنا'],
-        ['name' => 'سوار الوردة الذهبية', 'price' => '١٨٬٥٠٠', 'image' => 'featured-4.webp', 'tag' => 'جديد'],
-        ['name' => 'أقراط زركون براقة', 'price' => '١٤٬٠٠٠', 'image' => 'featured-5.webp', 'tag' => 'الأكثر إعجابًا'],
-        ['name' => 'خاتم حجر لامع', 'price' => '٢٢٬٠٠٠', 'image' => 'featured-6.webp', 'tag' => 'مختاراتنا'],
+        ['name' => 'عقد زهرة اللؤلؤ', 'price' => '١٥٬٠٠٠', 'image' => 'featured-2.webp', 'tag' => 'وصل حديثًا'],
+        ['name' => 'ساعة ذهبية أنيقة', 'price' => '٣٢٬٠٠٠', 'image' => 'featured-3.webp', 'tag' => 'وصل حديثًا'],
+        ['name' => 'سوار الوردة الذهبية', 'price' => '١٨٬٥٠٠', 'image' => 'featured-4.webp', 'tag' => 'وصل حديثًا'],
+        ['name' => 'أقراط زركون براقة', 'price' => '١٤٬٠٠٠', 'image' => 'featured-5.webp', 'tag' => 'وصل حديثًا'],
+        ['name' => 'خاتم حجر لامع', 'price' => '٢٢٬٠٠٠', 'image' => 'featured-6.webp', 'tag' => 'وصل حديثًا'],
         ['name' => 'قلادة قطرة الزركون', 'price' => '١٦٬٥٠٠', 'image' => 'featured-7.webp', 'tag' => 'وصل حديثًا'],
     ];
 @endphp
@@ -14,12 +14,12 @@
   <div class="dk-products__head">
     <div class="dk-products__ornament" aria-hidden="true">✦ <span></span> ✦</div>
     <div class="dk-products__title-group">
-      <div class="dk-products__eyebrow">مختارات دار الكردي</div>
+      <div class="dk-products__eyebrow">جديد دار الكردي</div>
       <h2 id="dkProductsTitle"><i class="bi bi-stars" aria-hidden="true"></i> المضاف حديثًا</h2>
     </div>
     <a class="dk-products__all" href="#" aria-label="عرض كل المنتجات، قريبًا">عرض الكل <i class="bi bi-arrow-left" aria-hidden="true"></i></a>
   </div>
-  <p class="dk-products__sub">تفاصيل صغيرة تصنع أناقة كبيرة</p>
+  <p class="dk-products__sub">أحدث إكسسواراتنا المختارة لكِ</p>
   <div class="dk-products__viewport" id="dkProductsViewport" tabindex="0" role="region" aria-label="تصفّح المنتجات بالسحب يمينًا ويسارًا">
     <div class="dk-products__track">
       @foreach($featured as $index => $product)
