@@ -188,3 +188,71 @@
 .luxury-categories .category-card h3{transition:color .45s ease,text-shadow .45s ease}
 .luxury-categories .category-card.is-royal-active h3{color:#a46a22!important;text-shadow:0 0 18px #edba6f99!important}
 @media (prefers-reduced-motion:reduce){.luxury-categories .categories-footer-line::after{animation:none!important;left:50%}.luxury-categories .category-card.is-royal-active .category-frame{transform:none!important}}
+
+
+/* Royal permanent stars V6 — append to existing categories.css (not a standalone replacement). */
+/* Existing five concurrent rotation effects become resting gold details. */
+.luxury-categories .category-frame::after,
+.luxury-categories .category-orbit {
+  animation: none !important;
+  opacity: .62 !important;
+}
+.luxury-categories .category-frame::after { transform: rotate(0deg); }
+.luxury-categories .category-orbit { transform: rotate(0deg); }
+.luxury-categories .category-frame .category-orbit::before {
+  width: 6px; height: 6px; top: -1px;
+  background: #fff6dc;
+  box-shadow:0 0 5px #fff9e0,0 0 9px #d6a252;
+}
+/* Keep four diamond stars resting around every circle permanently. */
+.luxury-categories .dak-stars {
+  position:absolute; inset:0; z-index:8; border-radius:50%;
+  pointer-events:none; overflow:visible;
+}
+.luxury-categories .dak-star {
+  position:absolute; display:block; line-height:1;
+  color:#d4a15a;
+  text-shadow:0 0 3px #fff9eb,0 0 7px #f3d5a0,0 1px 2px #a67639;
+  opacity:.83;
+  transform:translate(-50%,-50%) scale(.72);
+  transition:color .4s ease,opacity .4s ease,text-shadow .4s ease;
+  font-family:Georgia,serif;
+}
+.luxury-categories .dak-star--1 {left:13%;top:18%;font-size:20px;}
+.luxury-categories .dak-star--2 {left:88%;top:21%;font-size:14px;}
+.luxury-categories .dak-star--3 {left:94%;top:74%;font-size:19px;}
+.luxury-categories .dak-star--4 {left:12%;top:84%;font-size:12px;}
+/* Only the selected circle gets moving sparkles and a moving highlight. */
+.luxury-categories .category-card.is-royal-active .category-frame::after {
+  animation:dakActiveOrbit 5s linear infinite !important;
+  opacity:1 !important;
+}
+.luxury-categories .category-card.is-royal-active .category-orbit {
+  animation:dakActiveOrbit 5s linear infinite !important;
+  opacity:1 !important;
+}
+.luxury-categories .category-card.is-royal-active .dak-star {
+  color:#fff6d9;
+  opacity:1;
+  text-shadow:0 0 3px #fff,0 0 10px #fff1ba,0 0 19px #eba94d,0 0 29px #da9542;
+  animation:dakDiamondTwinkle 1.8s ease-in-out infinite;
+}
+.luxury-categories .category-card.is-royal-active .dak-star--2 {animation-delay:.32s;}
+.luxury-categories .category-card.is-royal-active .dak-star--3 {animation-delay:.7s;}
+.luxury-categories .category-card.is-royal-active .dak-star--4 {animation-delay:1.05s;}
+@keyframes dakActiveOrbit {to{transform:rotate(360deg)}}
+@keyframes dakDiamondTwinkle {
+  0%,100%{transform:translate(-50%,-50%) scale(.72);filter:brightness(1)}
+  40%{transform:translate(-50%,-50%) scale(1.35);filter:brightness(1.24)}
+  65%{transform:translate(-50%,-50%) scale(.94);filter:brightness(1.05)}
+}
+/* Keep the original active expansion; make it distinct yet elegant. */
+.luxury-categories .category-card.is-royal-active .category-frame {
+  transform:translateY(-7px) scale(1.045) !important;
+}
+@media (prefers-reduced-motion:reduce){
+  .luxury-categories .category-card.is-royal-active .dak-star,
+  .luxury-categories .category-card.is-royal-active .category-frame::after,
+  .luxury-categories .category-card.is-royal-active .category-orbit {animation:none!important}
+  .luxury-categories .category-card.is-royal-active .category-frame{transform:none!important}
+}

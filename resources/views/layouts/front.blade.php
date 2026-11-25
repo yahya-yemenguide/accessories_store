@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}">
     {{-- XAMPP: existing Front assets are loaded locally, with no npm/Vite. --}}
-    @foreach (['base.css', 'header.css', 'sidebar.css', 'hero.css', 'categories.css'] as $styleFile)
+    @foreach (['base.css', 'header.css', 'sidebar.css', 'hero.css', 'categories.css', 'royal-scrollbar.css'] as $styleFile)
         <style data-front-css="{{ $styleFile }}">{!! file_get_contents(resource_path('css/front/' . $styleFile)) !!}</style>
     @endforeach
     @stack('styles')
@@ -23,7 +23,7 @@
         </div>
         <main class="front-main">@yield('content')</main>
     </div>
-    @foreach (['header.js', 'sidebar.js', 'hero.js', 'categories.js'] as $scriptFile)
+    @foreach (['header.js', 'sidebar.js', 'hero.js', 'categories.js', 'royal-scrollbar.js'] as $scriptFile)
         <script data-front-js="{{ $scriptFile }}">{!! file_get_contents(resource_path('js/front/' . $scriptFile)) !!}</script>
     @endforeach
     @stack('scripts')

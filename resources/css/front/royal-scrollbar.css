@@ -1,40 +1,153 @@
-/* DAR AL-KURDI / ROYAL CHAMPAGNE SCROLLBAR
-   Only the main PAGE scrollbar. Does not touch the products/categories horizontal rails.
-   Chrome / Edge / Safari: native WebKit scrollbar styling.
-   Firefox: graceful, simpler fallback. */
+/* Dar Al-Kurdi | Royal Diamond Scroll V7
+   Full-height, integrated brown-gold track; original large golden jewel thumb.
+   Requires royal-scrollbar.js V7; changes only the FRONT main page rail.
+*/
+@media (min-width:768px) and (hover:hover) and (pointer:fine) {
+  html.dak-rail-ready { scrollbar-width:none !important; }
+  html.dak-rail-ready::-webkit-scrollbar,
+  html.dak-rail-ready body::-webkit-scrollbar { width:0 !important; height:0 !important; }
 
-/* Desktop: slim, polished champagne-gold thumb and pearl track. */
-@media (hover: hover) and (pointer: fine) {
-  html::-webkit-scrollbar { width: 13px; }
-  html::-webkit-scrollbar-track {
-    background: linear-gradient(90deg, #e8d4bf 0%, #fff8ef 36%, #fffdf7 60%, #e5c9a6 100%);
-    border-left: 1px solid rgba(158, 102, 53, .18);
-    box-shadow: inset 1px 0 4px rgba(116, 69, 31, .09);
+  .dak-rail {
+    --dak-rail-top: 285px;
+    --dak-progress: 0px;
+    position:fixed;
+    top:var(--dak-rail-top);
+    bottom:0;
+    right:0;
+    width:24px;
+    height:auto;
+    z-index:2100;
+    box-sizing:border-box;
+    opacity:0;
+    pointer-events:none;
+    transform:none !important;
+    transition:opacity .3s ease;
+    touch-action:none;
+    user-select:none;
+    -webkit-user-select:none;
+    filter:drop-shadow(-3px 3px 8px rgba(43,17,8,.22));
   }
-  html::-webkit-scrollbar-thumb {
-    min-height: 65px;
-    border-radius: 100px;
-    border: 3px solid #f6ebdf;
-    background: linear-gradient(90deg,
-      #9d642c 0%, #c18a42 12%, #f9dca0 32%,
-      #fff8dd 48%, #eec780 62%, #b27b35 83%, #8d5428 100%);
-    box-shadow: inset 0 0 0 1px rgba(255, 252, 233, .7),
-                inset 1px 0 2px rgba(255, 255, 255, .8),
-                0 0 7px rgba(179, 123, 50, .23);
+  html.dak-rail-ready .dak-rail[data-active="true"] {
+    opacity:1;
+    pointer-events:auto;
   }
-  html::-webkit-scrollbar-thumb:hover {
-    border-color: #f4e3cc;
-    background: linear-gradient(90deg,
-      #945521 0%, #c18b3c 14%, #ffe4a6 34%,
-      #fffbed 49%, #f6d08b 64%, #bd863c 85%, #965a28 100%);
+  /* Fully integrated rail: chocolate-gold, no white vertical panel */
+  .dak-rail__bed {
+    position:absolute;
+    inset:0;
+    border-radius:10px 0 0 0;
+    background:linear-gradient(90deg,
+      rgba(63,24,9,.65) 0%,
+      rgba(116,63,27,.82) 24%,
+      rgba(96,43,17,.92) 69%,
+      rgba(54,20,9,.8) 100%);
+    border-left:1px solid rgba(241,199,125,.74);
+    box-shadow:inset 2px 0 2px rgba(255,235,181,.33),
+      inset 0 0 9px rgba(33,11,4,.3),-3px 0 9px rgba(57,25,12,.14);
+    pointer-events:none;
   }
-  html::-webkit-scrollbar-thumb:active {
-    background: linear-gradient(90deg, #895020, #e0ad5a 25%, #fff5d0 52%, #d4a050 78%, #8e5424);
+  .dak-rail__bed::before {
+    content:"";
+    position:absolute;
+    top:5px;bottom:5px;left:50%;
+    width:12px;transform:translateX(-50%);
+    border-radius:100px;
+    background:linear-gradient(90deg,#75411d,#b97f39 18%,#ffdfa0 46%,#9f6228 80%,#703915);
+    box-shadow:inset 0 0 0 2px rgba(255,239,203,.37),
+      inset 0 0 8px rgba(68,30,10,.34);
   }
-  html::-webkit-scrollbar-corner { background: #f7eee4; }
+  .dak-rail__bed::after {
+    content:"";
+    position:absolute;
+    top:12px;bottom:12px;left:50%;
+    width:3px;transform:translateX(-50%);
+    border-radius:100px;
+    background:linear-gradient(90deg,#6c3b1a,#f9d58e,#8f5123);
+    box-shadow:0 0 8px rgba(255,224,150,.7);
+  }
+  .dak-rail__progress {
+    position:absolute;top:12px;left:50%;
+    width:3px;
+    height:var(--dak-progress);
+    transform:translateX(-50%);
+    max-height:calc(100% - 24px);
+    border-radius:100px;
+    background:linear-gradient(180deg,#fff9df,#edbb5b 45%,#fff6cb);
+    box-shadow:0 0 9px #ffdf97,0 0 15px rgba(255,194,91,.6);
+    pointer-events:none;
+  }
+  .dak-rail__top,.dak-rail__bottom {
+    position:absolute;
+    left:50%;transform:translateX(-50%);
+    font:15px/1 Georgia,serif;
+    color:#ffdf95;
+    text-shadow:0 0 7px #fff1c1,0 1px 2px #713613;
+    pointer-events:none;
+    z-index:2;
+  }
+  .dak-rail__top {top:6px}
+  .dak-rail__bottom {bottom:6px}
+
+  /* Restore the larger luxurious FIRST design, without whitening the rail */
+  .dak-rail__thumb {
+    position:absolute;
+    top:0;left:1px;
+    width:22px;
+    height:110px;
+    min-height:74px;
+    border-radius:13px;
+    background:linear-gradient(90deg,
+      #895026 0%,#c88e47 15%,#ffe4aa 30%,#fff8dc 47%,
+      #f5ca83 60%,#bf8238 83%,#80451c 100%);
+    border:2px solid #e8bb7b;
+    box-shadow:inset 0 0 0 2px #fff4d0b3,
+      inset 1px 1px 3px #fff9e2,
+      inset -2px -2px 5px #8e4e2455,
+      0 6px 13px #552a153b,0 0 8px #efc37966;
+    display:flex;align-items:center;justify-content:center;
+    overflow:visible;
+    pointer-events:auto;
+    cursor:grab;
+    will-change:transform;
+    transition:box-shadow .22s ease; /* never transition transform: causes lag */
+    z-index:4;
+  }
+  .dak-rail__thumb::before {
+    content:"";position:absolute;inset:4px;
+    border:1px solid rgba(255,245,212,.78);border-radius:10px;pointer-events:none;
+  }
+  .dak-rail__thumb::after {
+    content:"";position:absolute;inset:5px 8px;border-radius:10px;
+    background:linear-gradient(180deg,transparent,#fff8d3c9 20%,transparent 37%,transparent 63%,#fff8d38c 83%,transparent);
+    pointer-events:none;
+  }
+  .dak-rail__gem {
+    position:relative;z-index:2;width:20px;height:25px;
+    display:grid;place-items:center;
+    filter:drop-shadow(0 1px 2px #74431f99);
+  }
+  .dak-rail__gem svg {
+    width:20px;height:25px;display:block;
+    filter:drop-shadow(0 0 5px #fff1ba);
+  }
+  .dak-rail__thumb:hover,.dak-rail__thumb:focus-visible {
+    outline:2px solid #fff2c7;outline-offset:1px;
+    box-shadow:inset 0 0 0 2px #fff4d0,
+      0 8px 18px #552a1550,0 0 16px #f5bd6b;
+  }
+  .dak-rail__thumb:active,.dak-rail.is-dragging .dak-rail__thumb {
+    cursor:grabbing;
+    box-shadow:0 8px 22px #6336195e,0 0 23px #efbf75;
+  }
+  .dak-spark {transform-origin:center;animation:dakTwinkle 3.6s ease-in-out infinite;}
+  @keyframes dakTwinkle {
+    0%,75%,100%{opacity:.55;transform:scale(.82)}
+    83%{opacity:1;transform:scale(1.2)}
+  }
 }
-/* Firefox native controls have no gradient-thumb API; keep a matching gold tone. */
-@supports (-moz-appearance: none) {
-  html { scrollbar-color: #c3995b #f9efe5; scrollbar-width: thin; }
+@media (max-width:767px),(hover:none),(pointer:coarse) {
+  .dak-rail {display:none !important;}
 }
-/* On touch devices, keep the platform's small overlay scrollbar and natural gestures. */
+@media (prefers-reduced-motion:reduce) {
+  .dak-rail,.dak-rail * {animation:none !important;transition:none !important;}
+}
