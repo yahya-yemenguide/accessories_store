@@ -1,47 +1,56 @@
-<aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true" inert>
+{{-- Dar Al-Kurdi — mobile navigation only. Exactly the same six primary links as the desktop header. --}}
+<aside class="mobile-sidebar dk-royal-drawer" id="mobileSidebar" aria-hidden="true" inert>
   <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
-  <div class="sidebar-panel" role="dialog" aria-modal="true" aria-labelledby="sidebarTitle" tabindex="-1">
-    <div class="sidebar-top">
-      <div class="sidebar-brand-frame">
-        <span class="kurdi-sidebar-brand"><img class="kurdi-sidebar-brand__mark" src="{{ asset('assets/images/front/dar-alkurdi-mark.png') }}" alt="" width="58" height="58"><span><strong>دار الكردي</strong><small>للإكسسوارات</small></span></span>
-        <span id="sidebarTitle" class="visually-hidden">قائمة دار الكردي للإكسسوارات</span>
+  <div class="sidebar-panel dk-royal-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="sidebarTitle" tabindex="-1">
+    <div class="dk-royal-drawer__glow" aria-hidden="true"></div>
+    <div class="dk-royal-drawer__inner">
+      <div class="sidebar-top dk-royal-drawer__top">
+        <div class="dk-royal-drawer__identity">
+          <img src="{{ asset('assets/images/front/dar-alkurdi-mark.png') }}" alt="" width="54" height="54">
+          <span><strong>دار الكردي</strong><small>للإكسسوارات</small></span>
+        </div>
+        <h2 id="sidebarTitle" class="visually-hidden">القائمة الرئيسية - دار الكردي</h2>
+        <button type="button" class="sidebar-close dk-royal-drawer__close" id="sidebarCloseBtn" aria-label="إغلاق القائمة">
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
       </div>
-      <button type="button" class="sidebar-close" id="sidebarCloseBtn" aria-label="إغلاق القائمة"><span class="close-bars" aria-hidden="true"></span></button>
-    </div>
-    <div class="sidebar-welcome"><span class="welcome-star">✦</span><span>مرحبًا بكِ في متجرنا</span><i class="bi bi-heart" aria-hidden="true"></i></div>
-    <nav class="sidebar-nav" aria-label="القائمة الرئيسية">
-      <div class="sidebar-group">
-        <a class="sidebar-link" href="{{ url('/') }}"><span class="sidebar-item-icon"><i class="bi bi-house-door-fill"></i></span><span>الرئيسية</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-        <a class="sidebar-link" href="#"><span class="sidebar-item-icon"><i class="bi bi-grid"></i></span><span>الأقسام</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-        <a class="sidebar-link" href="#"><span class="sidebar-item-icon gold"><i class="bi bi-stars"></i></span><span>المضاف حديثًا</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-        <a class="sidebar-link" href="#"><span class="sidebar-item-icon gold"><i class="bi bi-award"></i></span><span>الأكثر مبيعًا</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-        <a class="sidebar-link" href="#"><span class="sidebar-item-icon gold"><i class="bi bi-percent"></i></span><span>العروض والخصومات</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-      </div>
-      <div class="sidebar-divider" aria-hidden="true"><i class="bi bi-heart"></i></div>
-      <div class="sidebar-group">
-        <a class="sidebar-link" href="#"><span class="sidebar-item-icon"><i class="bi bi-person"></i></span><span>حسابي</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-        <a class="sidebar-link" href="#"><span class="sidebar-item-icon"><i class="bi bi-heart"></i></span><span>المفضلة</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-        <a class="sidebar-link" href="#"><span class="sidebar-item-icon"><i class="bi bi-cart3"></i></span><span>سلة التسوق</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-      </div>
-      <div class="sidebar-divider" aria-hidden="true"><i class="bi bi-heart"></i></div>
-      <div class="sidebar-group">
-        <a class="sidebar-link" href="#"><span class="sidebar-item-icon"><i class="bi bi-headset"></i></span><span>تواصل معنا</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-        <a class="sidebar-link" href="#"><span class="sidebar-item-icon"><i class="bi bi-question-circle"></i></span><span>الأسئلة الشائعة</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-        <a class="sidebar-link" href="#"><span class="sidebar-item-icon"><i class="bi bi-info-circle"></i></span><span>من نحن</span><i class="bi bi-chevron-left sidebar-chevron"></i></a>
-      </div>
-    </nav>
-    <div class="sidebar-foot">
-      <div class="sidebar-ornament" aria-hidden="true"><span>✧</span><i class="bi bi-heart"></i><span>✧</span></div>
-      <div class="sidebar-social"><a href="#" aria-label="إنستغرام"><i class="bi bi-instagram"></i></a><a href="#" aria-label="تيك توك"><i class="bi bi-tiktok"></i></a><a href="#" aria-label="سناب شات"><i class="bi bi-snapchat"></i></a><a href="#" aria-label="واتساب"><i class="bi bi-whatsapp"></i></a></div>
+
+      <div class="dk-royal-drawer__seal" aria-hidden="true"><span></span><b>✦</b><span></span></div>
+
+      <nav class="sidebar-nav dk-royal-drawer__nav" aria-label="روابط المتجر">
+        <a class="sidebar-link dk-royal-drawer__link" href="{{ url('/') }}">
+          <span class="sidebar-item-icon"><i class="bi bi-house-door-fill" aria-hidden="true"></i></span><span>الرئيسية</span><i class="bi bi-arrow-up-left dk-royal-drawer__arrow" aria-hidden="true"></i>
+        </a>
+
+        <div class="dk-sidebar-categories dk-royal-drawer__categories" id="dkSidebarCategories">
+          <button class="sidebar-link dk-sidebar-categories__toggle dk-royal-drawer__link dk-royal-drawer__toggle" type="button" aria-expanded="false" aria-controls="dkSidebarCategoryMenu">
+            <span class="sidebar-item-icon"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i></span><span>الأقسام</span><i class="bi bi-chevron-down dk-royal-drawer__arrow" aria-hidden="true"></i>
+          </button>
+          <div class="dk-sidebar-categories__list dk-royal-drawer__subnav" id="dkSidebarCategoryMenu" hidden>
+            <a class="dk-sidebar-subnav" href="{{ url('/') }}#luxuryCategories"><i class="bi bi-grid" aria-hidden="true"></i>كل الأقسام</a>
+            <a class="dk-sidebar-subnav" href="{{ url('/') }}#dkCategoryPlated"><i class="bi bi-stars" aria-hidden="true"></i>المطليات</a>
+            <a class="dk-sidebar-subnav" href="{{ url('/') }}#dkCategorySilver"><i class="bi bi-gem" aria-hidden="true"></i>الفضيات</a>
+            <a class="dk-sidebar-subnav" href="{{ url('/') }}#dkCategoryWatches"><i class="bi bi-watch" aria-hidden="true"></i>الساعات</a>
+            <a class="dk-sidebar-subnav" href="{{ url('/') }}#dkCategoryZircon"><i class="bi bi-diamond" aria-hidden="true"></i>الزركونات</a>
+            <a class="dk-sidebar-subnav" href="{{ url('/') }}#dkCategoryRings"><i class="bi bi-circle" aria-hidden="true"></i>الخواتم</a>
+          </div>
+        </div>
+
+        <a class="sidebar-link dk-royal-drawer__link" href="{{ url('/') }}#featuredProducts">
+          <span class="sidebar-item-icon"><i class="bi bi-stars" aria-hidden="true"></i></span><span>المضاف حديثًا</span><i class="bi bi-arrow-up-left dk-royal-drawer__arrow" aria-hidden="true"></i>
+        </a>
+        <a class="sidebar-link dk-royal-drawer__link" href="{{ url('/') }}#akBestSellers">
+          <span class="sidebar-item-icon"><i class="bi bi-award" aria-hidden="true"></i></span><span>الأكثر مبيعًا</span><i class="bi bi-arrow-up-left dk-royal-drawer__arrow" aria-hidden="true"></i>
+        </a>
+        <a class="sidebar-link dk-royal-drawer__link" href="{{ url('/') }}#akOffers">
+          <span class="sidebar-item-icon"><i class="bi bi-tag" aria-hidden="true"></i></span><span>العروض والخصومات</span><i class="bi bi-arrow-up-left dk-royal-drawer__arrow" aria-hidden="true"></i>
+        </a>
+        <a class="sidebar-link dk-royal-drawer__link" href="{{ url('/') }}#darContact">
+          <span class="sidebar-item-icon"><i class="bi bi-envelope-paper-heart" aria-hidden="true"></i></span><span>تواصل معنا</span><i class="bi bi-arrow-up-left dk-royal-drawer__arrow" aria-hidden="true"></i>
+        </a>
+      </nav>
+      <div class="dk-royal-drawer__signature" aria-hidden="true"><span>✧</span> DAR AL-KURDI <span>✧</span></div>
     </div>
   </div>
 </aside>
-<style>
-.kurdi-sidebar-brand{display:flex;direction:rtl;align-items:center;gap:5px;justify-content:center;max-width:100%;white-space:nowrap;color:#442317}
-.kurdi-sidebar-brand__mark{height:47px;width:47px;object-fit:contain;flex:none;filter:drop-shadow(0 2px 4px #8a501b3b)}
-.kurdi-sidebar-brand>span{display:flex;flex-direction:column;align-items:center;line-height:1.2}
-.kurdi-sidebar-brand strong{font-family:'Tajawal',sans-serif;font-size:20px;font-weight:900}
-.kurdi-sidebar-brand small{font:700 11px 'Tajawal',sans-serif;color:#ac7339}
-.sidebar-brand-frame{width:min(62vw,238px)!important}
-@media(max-width:360px){.kurdi-sidebar-brand__mark{width:39px;height:39px}.kurdi-sidebar-brand strong{font-size:17px}}
-</style>
+<style data-dk-royal-drawer>{!! file_get_contents(resource_path('css/front/sidebar-royal-v2.css')) !!}</style>

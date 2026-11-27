@@ -1,0 +1,29 @@
+/* Dar Al-Kurdi — Royal navigation additions; existing header/sidebar remain intact. */
+html{scroll-behavior:smooth}
+#luxuryCategories,#featuredProducts,#akBestSellers,#akOffers,#darContact,
+#dkCategoryPlated,#dkCategorySilver,#dkCategoryWatches,#dkCategoryZircon,#dkCategoryRings{scroll-margin-top:clamp(126px,12vw,185px)}
+.dk-nav-dropdown{position:relative;display:inline-flex;align-items:center}
+.dk-nav-dropdown__trigger{background:none;border:0;font-family:inherit;cursor:pointer}
+.dk-nav-dropdown__chevron{font-size:10px!important;transition:transform .22s}
+.dk-nav-dropdown.is-open .dk-nav-dropdown__chevron{transform:rotate(180deg)}
+.dk-nav-dropdown__panel{position:absolute;top:calc(100% + 8px);right:50%;transform:translate(50%,-8px);width:225px;padding:10px;border:1px solid #c99c5b;border-radius:17px;background:linear-gradient(147deg,#fffaf4,#f7e7d4 65%,#fff6ea);box-shadow:0 16px 38px #33170e36,inset 0 1px #fff;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .24s,transform .24s,visibility .24s;z-index:50;direction:rtl}
+.dk-nav-dropdown__panel:before{content:'';position:absolute;inset:4px;border:1px solid #d8b77d7a;border-radius:13px;pointer-events:none}
+.dk-nav-dropdown.is-open .dk-nav-dropdown__panel,.dk-nav-dropdown:focus-within .dk-nav-dropdown__panel{opacity:1;visibility:visible;transform:translate(50%,0);pointer-events:auto}
+.dk-nav-dropdown__panel>a{position:relative;z-index:1;display:flex;gap:11px;align-items:center;padding:10px 13px;margin:2px 0;border-radius:10px;color:#482518!important;text-decoration:none!important;font:700 14px 'Tajawal',sans-serif;transition:background .22s,transform .22s}
+.dk-nav-dropdown__panel>a i{color:#b88a44;font-size:17px}
+.dk-nav-dropdown__panel>a:hover,.dk-nav-dropdown__panel>a:focus-visible{background:linear-gradient(90deg,#f5e0c4,#fffbf4);transform:translateX(-3px)}
+.dk-nav-dropdown__all{border-bottom:1px solid #d9ba8d;margin-bottom:5px!important}
+.dk-nav-dropdown__trigger.active{background:linear-gradient(130deg,#32190f,#65402b);color:#fff!important}
+.dk-nav-dropdown__trigger.active i{color:#efc18d}
+.dk-sidebar-categories__toggle{font-family:inherit;text-align:right;cursor:pointer}
+.dk-sidebar-categories__toggle .sidebar-chevron{transition:transform .22s}
+.dk-sidebar-categories__toggle[aria-expanded="true"] .sidebar-chevron{transform:rotate(180deg)}
+.dk-sidebar-categories__list{margin:5px 14px 5px 0;padding:7px 10px 7px 4px;border-right:2px solid #c99750;background:linear-gradient(90deg,#fff4e8aa,transparent);border-radius:0 10px 10px 0}
+.dk-sidebar-categories__list[hidden]{display:none!important}
+.dk-sidebar-subnav{display:block;padding:9px 12px;margin:2px 0;border-radius:9px;text-decoration:none!important;color:#543025!important;font:700 14px 'Tajawal',sans-serif;transition:background .18s,transform .18s}
+.dk-sidebar-subnav:hover,.dk-sidebar-subnav:focus-visible{background:#f7dfc4;transform:translateX(-3px)}
+.dk-nav-toast{position:fixed;inset:auto 50% 25px auto;transform:translateX(50%);z-index:3000;max-width:min(90vw,440px);padding:13px 22px;background:linear-gradient(130deg,#3e2117,#62402b);border:1px solid #d8a85e;box-shadow:0 16px 35px #1c0c0860;border-radius:20px;color:#fff5e3;font:700 14px 'Tajawal',sans-serif;text-align:center;pointer-events:none;animation:dkNavToast .28s ease both}
+@keyframes dkNavToast{from{opacity:0;transform:translate(50%,12px)}to{opacity:1;transform:translate(50%,0)}}
+@media(max-width:1099px){#luxuryCategories,#featuredProducts,#akBestSellers,#akOffers,#darContact,#dkCategoryPlated,#dkCategorySilver,#dkCategoryWatches,#dkCategoryZircon,#dkCategoryRings{scroll-margin-top:130px}}
+@media(max-width:599px){#luxuryCategories,#featuredProducts,#akBestSellers,#akOffers,#darContact,#dkCategoryPlated,#dkCategorySilver,#dkCategoryWatches,#dkCategoryZircon,#dkCategoryRings{scroll-margin-top:120px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dk-nav-dropdown__panel,.dk-nav-dropdown__chevron,.dk-sidebar-categories__toggle .sidebar-chevron{transition:none!important}}

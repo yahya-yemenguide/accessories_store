@@ -1,41 +1,47 @@
+/* Dar Al-Kurdi mobile drawer. Desktop navigation and the existing royal-navigation.js are untouched. */
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('mobileSidebar');
   const toggle = document.getElementById('menuToggleBtn');
-  const closeBtn = document.getElementById('sidebarCloseBtn');
+  const closeButton = document.getElementById('sidebarCloseBtn');
   const backdrop = document.getElementById('sidebarBackdrop');
   const panel = root?.querySelector('.sidebar-panel');
   if (!root || !toggle || !panel) return;
-  let previouslyFocused = null;
+  let previousFocus = null;
+  const isOpen = () => root.classList.contains('is-open');
   function close() {
+    if (!isOpen()) return;
     root.classList.remove('is-open');
-    root.setAttribute('aria-hidden','true');
-    root.setAttribute('inert','');
-    toggle.setAttribute('aria-expanded','false');
+    root.setAttribute('aria-hidden', 'true');
+    root.setAttribute('inert', '');
+    toggle.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('front-sidebar-open');
-    if (previouslyFocused?.focus) previouslyFocused.focus();
+    if (previousFocus?.isConnected) previousFocus.focus();
   }
   function open() {
-    previouslyFocused = document.activeElement;
+    if (isOpen()) return;
+    previousFocus = document.activeElement;
     root.removeAttribute('inert');
-    root.setAttribute('aria-hidden','false');
+    root.setAttribute('aria-hidden', 'false');
     root.classList.add('is-open');
-    toggle.setAttribute('aria-expanded','true');
+    toggle.setAttribute('aria-expanded', 'true');
     document.body.classList.add('front-sidebar-open');
-    closeBtn?.focus();
+    closeButton?.focus();
   }
-  toggle.addEventListener('click', () => root.classList.contains('is-open') ? close() : open());
-  closeBtn?.addEventListener('click', close);
+  toggle.addEventListener('click', () => isOpen() ? close() : open());
+  closeButton?.addEventListener('click', close);
   backdrop?.addEventListener('click', close);
-  root.querySelectorAll('.sidebar-link').forEach(link => link.addEventListener('click', close));
-  document.addEventListener('keydown', (event) => {
-    if (!root.classList.contains('is-open')) return;
+  // The categories button must stay open; actual navigation links close the drawer.
+  root.querySelectorAll('.sidebar-link[href], .dk-sidebar-subnav[href]').forEach(a => {
+    a.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', event => {
+    if (!isOpen()) return;
     if (event.key === 'Escape') {event.preventDefault();close();return;}
     if (event.key !== 'Tab') return;
-    const focusable = [...panel.querySelectorAll('button:not([disabled]),a[href]')];
+    const focusable = [...panel.querySelectorAll('button:not([disabled]),a[href]')].filter(el => !el.closest('[hidden]'));
     if (!focusable.length) return;
-    const first=focusable[0],last=focusable[focusable.length-1];
-    if(event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
-    if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
+    if (event.shiftKey && document.activeElement === focusable[0]) {event.preventDefault();focusable.at(-1).focus();}
+    else if (!event.shiftKey && document.activeElement === focusable.at(-1)) {event.preventDefault();focusable[0].focus();}
   });
-  window.matchMedia('(min-width: 1100px)').addEventListener?.('change', e => { if(e.matches && root.classList.contains('is-open')) close(); });
+  window.matchMedia('(min-width: 1100px)').addEventListener?.('change', e => { if (e.matches) close(); });
 });
