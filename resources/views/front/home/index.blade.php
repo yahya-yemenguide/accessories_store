@@ -10,48 +10,23 @@
     @include('front.home.offers')
     @include('front.home.why-choose')
     @include('front.home.reviews')
+    @include('front.home.contact')
     @include('front.home.footer')
 @endsection
 
 {{-- تنسيقات الأقسام مستقلة حتى تعمل مباشرة مع XAMPP بدون Vite --}}
 @push('styles')
-    @if (is_file(resource_path('css/front/featured-products.css')))
-        <style data-featured-inline-css>{!! file_get_contents(resource_path('css/front/featured-products.css')) !!}</style>
-    @endif
-    @if (is_file(resource_path('css/front/best-sellers.css')))
-        <style data-best-sellers-inline-css>{!! file_get_contents(resource_path('css/front/best-sellers.css')) !!}</style>
-    @endif
-    @if (is_file(resource_path('css/front/offers.css')))
-        <style data-offers-inline-css>{!! file_get_contents(resource_path('css/front/offers.css')) !!}</style>
-    @endif
-    @if (is_file(resource_path('css/front/why-choose.css')))
-        <style data-why-choose-inline-css>{!! file_get_contents(resource_path('css/front/why-choose.css')) !!}</style>
-    @endif
-    @if (is_file(resource_path('css/front/reviews.css')))
-        <style data-reviews-inline-css>{!! file_get_contents(resource_path('css/front/reviews.css')) !!}</style>
-    @endif
-    @if (is_file(resource_path('css/front/footer.css')))
-        <style data-ak-footer-css>{!! file_get_contents(resource_path('css/front/footer.css')) !!}</style>
-    @endif
+    @foreach (['featured-products.css','best-sellers.css','offers.css','why-choose.css','reviews.css','contact.css','footer.css'] as $styleFile)
+        @if (is_file(resource_path('css/front/' . $styleFile)))
+            <style data-front-home-css="{{ $styleFile }}">{!! file_get_contents(resource_path('css/front/' . $styleFile)) !!}</style>
+        @endif
+    @endforeach
 @endpush
 
 @push('scripts')
-    @if (is_file(resource_path('js/front/featured-products.js')))
-        <script data-featured-inline-js>{!! file_get_contents(resource_path('js/front/featured-products.js')) !!}</script>
-    @endif
-    @if (is_file(resource_path('js/front/best-sellers.js')))
-        <script data-best-sellers-inline-js>{!! file_get_contents(resource_path('js/front/best-sellers.js')) !!}</script>
-    @endif
-    @if (is_file(resource_path('js/front/offers.js')))
-        <script data-offers-inline-js>{!! file_get_contents(resource_path('js/front/offers.js')) !!}</script>
-    @endif
-    @if (is_file(resource_path('js/front/why-choose.js')))
-        <script data-why-choose-inline-js>{!! file_get_contents(resource_path('js/front/why-choose.js')) !!}</script>
-    @endif
-    @if (is_file(resource_path('js/front/reviews.js')))
-        <script data-reviews-inline-js>{!! file_get_contents(resource_path('js/front/reviews.js')) !!}</script>
-    @endif
-    @if (is_file(resource_path('js/front/footer.js')))
-        <script data-ak-footer-js>{!! file_get_contents(resource_path('js/front/footer.js')) !!}</script>
-    @endif
+    @foreach (['featured-products.js','best-sellers.js','offers.js','why-choose.js','reviews.js','contact.js','footer.js'] as $scriptFile)
+        @if (is_file(resource_path('js/front/' . $scriptFile)))
+            <script data-front-home-js="{{ $scriptFile }}">{!! file_get_contents(resource_path('js/front/' . $scriptFile)) !!}</script>
+        @endif
+    @endforeach
 @endpush
