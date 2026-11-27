@@ -1,39 +1,126 @@
-/* DAR AL-KURDI · Signature Edition V2 · isolated, image-free luxury design */
-.dar-why{--dw-ink:#47271b;--dw-gold:#c39455;--dw-cream:#fff8f0;position:relative;isolation:isolate;direction:rtl;color:var(--dw-ink);max-width:1510px;margin:18px auto 36px;padding:clamp(24px,3vw,42px) clamp(13px,3vw,46px) 20px;overflow:hidden;border-radius:30px;border:1px solid #dfc5a2;background:radial-gradient(ellipse 65% 75% at 52% -35%,rgba(255,255,255,.99),transparent 78%),radial-gradient(ellipse 25% 54% at 3% 72%,rgba(218,170,105,.15),transparent 100%),radial-gradient(ellipse 29% 60% at 96% 20%,rgba(223,182,131,.16),transparent 100%),linear-gradient(140deg,#fffaf5 4%,#f3e6d8 52%,#fff9f2 100%);box-shadow:0 23px 54px rgba(74,42,24,.12),inset 0 1px rgba(255,255,255,.95)}
-.dar-why::before{content:"";pointer-events:none;position:absolute;inset:9px;border:1px solid rgba(183,125,64,.28);border-radius:23px;z-index:0}
-.dar-why::after{content:"";position:absolute;left:50%;bottom:-95px;transform:translateX(-50%);height:190px;width:65%;background:radial-gradient(ellipse,rgba(196,137,67,.18),transparent 70%);pointer-events:none;z-index:0}
-.dar-why__container{position:relative;z-index:1}
-.dar-why__header{text-align:center;margin:0 auto 27px;max-width:840px}
-.dar-why__eyebrow{display:inline-block;color:#af7b42;font-size:11px;font-weight:800;letter-spacing:.065em}
-.dar-why__header h2{font-family:'Tajawal',sans-serif;font-size:clamp(26px,3.5vw,47px);line-height:1.35;font-weight:900;color:#4b291d;margin:6px 0 2px;text-shadow:0 1px 0 rgba(255,255,255,.85)}
-.dar-why__header h2 span{color:#84502c}
-.dar-why__header p{color:#96765d;font-size:clamp(12px,1.15vw,15px);font-weight:600;margin:4px 0 11px}
-.dar-why__signature{display:flex;align-items:center;justify-content:center;gap:14px;color:#bd8945;font-size:22px}
-.dar-why__signature i{height:1px;width:clamp(55px,8vw,125px);background:linear-gradient(90deg,transparent,#c49451,transparent)}
-.dar-why__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.8vw,24px);perspective:1100px;padding:5px 4px 16px}
-.dar-why__card{--dw-rx:0deg;--dw-ry:0deg;--dw-lift:0px;position:relative;min-width:0;min-height:294px;padding:34px 18px 29px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;isolation:isolate;overflow:hidden;border-radius:27px;border:1px solid #d6b07b;background:radial-gradient(ellipse 65% 46% at 45% 2%,rgba(255,255,255,.93),transparent 82%),linear-gradient(145deg,rgba(255,254,252,.97),#f7ecdf 61%,#ead4bb);box-shadow:inset 0 0 0 3px rgba(255,251,242,.92),inset 0 0 0 4px rgba(200,151,89,.25),0 17px 28px rgba(87,53,33,.15),0 2px 0 #fff;transform:perspective(950px) rotateX(var(--dw-rx)) rotateY(var(--dw-ry)) translateY(var(--dw-lift));transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease,border-color .5s ease;backface-visibility:hidden}
-.dar-why__card::before{content:"";position:absolute;inset:8px;border:1px solid rgba(215,179,132,.49);border-radius:19px;pointer-events:none}
-.dar-why__card::after{content:"";position:absolute;inset:-85% -85%;background:linear-gradient(115deg,transparent 43%,rgba(255,255,255,.08) 46%,rgba(255,255,255,.82) 50%,rgba(255,228,177,.18) 53%,transparent 58%);transform:translateX(55%);opacity:0;pointer-events:none;z-index:3}
-.dar-why__card.is-lit::after,.dar-why__card:hover::after{opacity:.84;animation:dw-signature-sweep 1.35s ease-out both}
-.dar-why__card.is-lit,.dar-why__card:hover{--dw-lift:-9px;border-color:#b37d3e;box-shadow:inset 0 0 0 3px rgba(255,252,244,.97),inset 0 0 0 4px rgba(211,167,108,.4),0 25px 37px rgba(90,46,24,.22),0 0 22px rgba(218,169,94,.3)}
-.dar-why__card-light{position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 50% 26%,rgba(255,246,214,.68),transparent 45%)}
-.dar-why__emblem{position:relative;display:grid;place-items:center;flex:none;width:128px;height:122px;transform:translateZ(26px);margin:0 0 22px}
-.dar-why__emblem::before{content:"";position:absolute;inset:9px 10px 4px;border-radius:50%;background:radial-gradient(circle at 30% 20%,#fffdf1,#f6ddb0 43%,#ca9759 78%,#9c6839);border:1px solid #fff8e6;box-shadow:inset 0 2px 4px #fff, inset 0 -12px 17px rgba(110,62,28,.24),0 13px 22px rgba(119,73,35,.22),0 0 0 5px rgba(255,255,255,.6),0 0 0 6px rgba(199,151,83,.47)}
-.dar-why__emblem::after{content:"";position:absolute;inset:18px 19px 13px;border-radius:50%;border:1px solid rgba(255,253,238,.9);box-shadow:inset 0 0 0 1px rgba(163,109,51,.15)}
-.dar-why__emblem-shine{position:absolute;inset:15px;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.74),transparent 50%);transform:rotate(-20deg)}
-.dar-why__emblem>i{position:relative;z-index:2;font-size:53px;line-height:1;color:#64381e;text-shadow:0 2px 1px rgba(255,248,215,.84);filter:drop-shadow(0 2px 2px rgba(99,51,20,.15));transition:transform .65s cubic-bezier(.2,.85,.25,1),filter .5s}
-.dar-why__card.is-lit .dar-why__emblem>i,.dar-why__card:hover .dar-why__emblem>i{transform:translateY(-4px) scale(1.12);filter:drop-shadow(0 4px 5px rgba(125,69,29,.28))}
-.dar-why__card-copy{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;transform:translateZ(15px);flex:1;width:100%}
-.dar-why__card h3{font:900 clamp(18px,1.65vw,25px)/1.4 'Tajawal',sans-serif;color:#48261a;margin:0 0 9px}
-.dar-why__fine-rule{width:64px;height:1px;margin:0 0 12px;background:linear-gradient(90deg,transparent,#bb8c4a,transparent);position:relative}
-.dar-why__fine-rule::after{content:"";position:absolute;left:50%;top:50%;height:5px;width:5px;transform:translate(-50%,-50%) rotate(45deg);background:#c5985d}
-.dar-why__card p{font:600 clamp(12px,1vw,15px)/1.7 'Tajawal',sans-serif;color:#8b6750;margin:0;max-width:232px}
-.dar-why__card-diamond{position:absolute;bottom:12px;font-size:11px;color:#c79a59;text-shadow:0 0 7px rgba(240,180,100,.5)}
-.dar-why__footer{display:flex;align-items:center;justify-content:center;gap:14px;color:#bc8b46;font-size:19px}
-.dar-why__footer i{width:min(19%,145px);height:1px;background:linear-gradient(90deg,transparent,#c79a5c,transparent)}
-@keyframes dw-signature-sweep{from{transform:translateX(55%)}to{transform:translateX(-55%)}}
-@media(max-width:1050px){.dar-why__grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px;margin:auto}}
-@media(max-width:600px){.dar-why{padding:26px 12px 17px;margin:12px 8px 25px;border-radius:23px}.dar-why::before{inset:7px;border-radius:17px}.dar-why__header{margin-bottom:18px}.dar-why__header h2{font-size:clamp(24px,6.4vw,33px)}.dar-why__header p{font-size:12px;line-height:1.6}.dar-why__grid{gap:10px;padding:4px 0 14px}.dar-why__card{padding:20px 8px 21px;min-height:250px;border-radius:20px}.dar-why__card::before{inset:5px;border-radius:15px}.dar-why__emblem{height:94px;width:94px;margin-bottom:18px}.dar-why__emblem::before{inset:9px 9px 4px}.dar-why__emblem::after{inset:15px}.dar-why__emblem>i{font-size:37px}.dar-why__card h3{font-size:clamp(15px,4vw,19px);margin-bottom:7px}.dar-why__card p{font-size:11px;line-height:1.6}.dar-why__fine-rule{margin-bottom:10px}}
-@media(max-width:360px){.dar-why__grid{grid-template-columns:1fr;max-width:295px}.dar-why__card{min-height:245px}.dar-why__emblem{height:102px;width:102px}}
-@media(hover:none){.dar-why__card{transform:none!important}.dar-why__card.is-lit{--dw-lift:0px}}
-@media(prefers-reduced-motion:reduce){.dar-why *, .dar-why::after{animation:none!important;transition:none!important}.dar-why__card{transform:none!important}}
+/* Dar Al-Kurdi | Why Choose Royal Gallery V3 — CSS background, 3D vector exhibits */
+.dkw-royal{--dkw-brown:#452214;--dkw-gold:#c18a42;--dkw-pearl:#fff8ed;direction:rtl;isolation:isolate;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#fffefa 0%,#fbf1e6 42%,transparent 72%),radial-gradient(ellipse at 100% 88%,#e5c3a44a,transparent 55%),radial-gradient(ellipse at 0% 80%,#e3b87d44,transparent 45%),linear-gradient(125deg,#fff7ed 0%,#f7e9dc 52%,#fff7ec 100%);color:var(--dkw-brown);padding:30px 14px 30px;margin:14px auto 24px;max-width:1600px;border-block:1px solid #ddba83;}
+.dkw-royal::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(120deg,transparent 0 120px,#fff8ee44 120px 121px,transparent 122px 245px),radial-gradient(ellipse at center,#fff8ec7a,transparent 68%);opacity:.42;z-index:-1}
+.dkw-royal__inner{max-width:1480px;margin:auto;position:relative}
+.dkw-royal__heading{text-align:center;margin:0 auto 25px;position:relative}
+.dkw-royal__crown{display:block;font-size:33px;line-height:1;color:#c89045;text-shadow:0 2px 0 #fff6de,0 6px 12px #88501e42;margin-bottom:-1px;filter:drop-shadow(0 1px 3px #dbb879)}
+.dkw-royal__titleframe{position:relative;display:inline-block;padding:11px clamp(18px,3vw,42px) 12px;border-radius:22px 22px 18px 18px;border:1px solid #dbac66;box-shadow:inset 0 0 0 2px #fff6e6,0 9px 22px #75442427,0 1px 0 #fff8ed;background:linear-gradient(115deg,#5b2c1a,#3c1b11 46%,#67341c);}
+.dkw-royal__titleframe:before,.dkw-royal__titleframe:after{content:'✦';position:absolute;top:50%;transform:translateY(-50%);color:#ebbf7a;font-size:14px}.dkw-royal__titleframe:before{right:8px}.dkw-royal__titleframe:after{left:8px}
+.dkw-royal__heading h2{font:900 clamp(21px,2.7vw,40px)/1.3 'Tajawal',sans-serif;margin:0;color:#fff1d6;text-shadow:0 2px 1px #2a0f09,0 0 16px #f4c88039}
+.dkw-royal__heading p{margin:9px 0 0;color:#8b5739;font-size:clamp(12px,1.1vw,16px);font-weight:700}
+.dkw-royal__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.65vw,25px);align-items:stretch;perspective:1300px;padding:10px 4px 15px}
+.dkw-royal__card{--dkw-rx:0deg;--dkw-ry:0deg;position:relative;min-width:0;min-height:360px;border:0;border-radius:45% 45% 20px 20px / 15% 15% 19px 19px;padding:25px 15px 23px;display:flex;flex-direction:column;align-items:center;text-align:center;isolation:isolate;transform:perspective(1200px) rotateX(var(--dkw-rx)) rotateY(var(--dkw-ry)) translateY(0);transition:transform .5s cubic-bezier(.2,.7,.2,1),filter .5s ease,box-shadow .5s ease;filter:drop-shadow(0 13px 11px #75432325);box-shadow:inset 0 0 0 1px #fffdf5,0 8px 24px #66351c15;background:linear-gradient(160deg,#fffdf7 0%,#fcecdf 45%,#f8e5d3 100%);border:2px solid #bd843e;outline:2px solid #ffefcb;outline-offset:-7px;backface-visibility:hidden}
+.dkw-royal__card:before{content:'';position:absolute;z-index:-1;inset:3px;border-radius:inherit;border:1px solid #fff9e9;box-shadow:inset 0 0 0 2px #f3d8acaa,inset 0 4px 18px #fffefbbd,inset 0 -28px 24px #c68d4650;pointer-events:none}
+.dkw-royal__card:after{content:'';position:absolute;inset:0;border-radius:inherit;z-index:3;pointer-events:none;background:linear-gradient(112deg,transparent 26%,#ffffff00 40%,#fffdf5ac 49%,#fff8dc00 58%,transparent 72%);background-size:260% 100%;background-position:155% 0;opacity:.0;transition:opacity .3s ease}
+.dkw-royal__card.is-lit:after,.dkw-royal__card:hover:after{opacity:.8;animation:dkw-royal-sweep 2.5s ease-out 1}
+@keyframes dkw-royal-sweep{0%{background-position:160% 0}100%{background-position:-120% 0}}
+.dkw-royal__card:hover,.dkw-royal__card.is-lit{transform:perspective(1200px) rotateX(var(--dkw-rx)) rotateY(var(--dkw-ry)) translateY(-7px);filter:drop-shadow(0 18px 17px #72401e40);box-shadow:inset 0 0 0 1px #fffdf5,0 0 25px #e8c07880}
+.dkw-royal__engrave{position:absolute;z-index:0;inset:12px 12px auto;height:85px;border-radius:150px 150px 0 0;border:1px solid #cc98565a;border-bottom:0;pointer-events:none}
+.dkw-royal__engrave:before,.dkw-royal__engrave:after{content:'';position:absolute;top:43px;width:13px;height:1px;background:#ca9958;opacity:.6}.dkw-royal__engrave:before{right:2px}.dkw-royal__engrave:after{left:2px}
+.dkw-royal__finial{position:absolute;top:-15px;left:50%;transform:translateX(-50%) rotate(45deg);width:26px;height:26px;border:2px solid #f7e0af;border-radius:5px;background:linear-gradient(125deg,#fff9df,#c58c3c 50%,#ffebad);box-shadow:0 0 0 2px #a46a2d,0 0 10px #f2c47391;display:grid;place-items:center;z-index:4}.dkw-royal__finial span{transform:rotate(-45deg);font-size:11px;color:#fff8e6;text-shadow:0 0 4px #fff}
+.dkw-royal__spark{position:absolute;z-index:2;color:#e2ab59;text-shadow:0 0 9px #fff0b0}.dkw-royal__spark--a{top:42px;right:20px}.dkw-royal__spark--b{top:78px;left:22px;font-size:13px}.dkw-royal__card.is-lit .dkw-royal__spark{animation:dkw-twinkle 2.5s ease-in-out infinite alternate}@keyframes dkw-twinkle{from{opacity:.4;transform:scale(.85)}to{opacity:1;transform:scale(1.4)}}
+.dkw-royal__stage{height:195px;width:100%;flex:0 0 195px;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;position:relative;z-index:2;padding-top:18px}
+.dkw-royal__art{position:relative;width:clamp(130px,12vw,190px);height:148px;filter:drop-shadow(0 10px 8px #8f582d3e);transform-origin:center bottom;transition:transform .6s cubic-bezier(.2,.65,.25,1);animation:dkw-float 5s ease-in-out infinite;animation-delay:var(--dkw-delay,0s)}
+.dkw-royal__art svg{width:100%;height:100%;overflow:visible}.dkw-royal__card.is-lit .dkw-royal__art,.dkw-royal__card:hover .dkw-royal__art{transform:translateY(-7px) scale(1.06)}@keyframes dkw-float{0%,100%{translate:0 0}50%{translate:0 -4px}}
+.dkw-royal__pedestal{width:74%;height:27px;border-radius:50% / 45%;position:relative;margin-top:-10px;background:linear-gradient(180deg,#fffae6 5%,#eed4a0 18%,#be853e 39%,#6f3819 67%,#c99145 85%,#fff3bf 100%);border:2px solid #e9bd72;box-shadow:0 8px 8px #87502136,inset 0 3px 3px #fff8d0;z-index:2}
+.dkw-royal__pedestal span{display:block;height:10px;margin:2px 7px 0;border-radius:50%;background:linear-gradient(#fdf7e1,#e4c18d);border:1px solid #e9cb91}
+.dkw-royal__copy{z-index:2;position:relative;width:100%;flex:1;display:flex;flex-direction:column;align-items:center;padding:7px 0 0}
+.dkw-royal__copy h3{font:900 clamp(15px,1.43vw,23px)/1.4 'Tajawal',sans-serif;color:#fff4d7;background:linear-gradient(110deg,#5d2917,#34160e,#6a351c);padding:10px 8px 7px;margin:0 -12px 12px;width:calc(100% + 24px);min-height:50px;display:grid;place-items:center;border:1px solid #ba8348;border-radius:35px;box-shadow:inset 0 1px 0 #edc18a,0 4px 9px #5f2e1836;text-shadow:0 1px 2px #2d110a}
+.dkw-royal__rule{color:#b8823a;font-size:11px;line-height:1;margin:0 0 9px;width:74%;display:flex;gap:6px;align-items:center;justify-content:center}.dkw-royal__rule:before,.dkw-royal__rule:after{content:'';height:1px;flex:1;background:linear-gradient(90deg,transparent,#b98443,transparent)}
+.dkw-royal__copy p{margin:0;font-size:clamp(12px,1.03vw,15px);font-weight:700;line-height:1.6;color:#633a28;max-width:255px}
+.dkw-royal__foot{font-size:14px;color:#c88c42;margin-top:8px;z-index:2}.dkw-royal__signature{display:flex;gap:12px;justify-content:center;align-items:center;color:#c88d3e;font-size:19px;margin:12px auto 0;width:min(410px,70%)}.dkw-royal__signature span{height:1px;flex:1;background:linear-gradient(90deg,transparent,#c89751,transparent)}
+@media(max-width:1100px){.dkw-royal__grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:790px;margin-inline:auto;gap:27px 20px}.dkw-royal__card{min-height:360px}.dkw-royal__art{width:180px}}
+@media(max-width:600px){.dkw-royal{padding:26px 10px 25px;margin:10px auto 17px}.dkw-royal__heading{margin-bottom:25px}.dkw-royal__heading h2{font-size:clamp(19px,5.2vw,26px)}.dkw-royal__titleframe{padding:10px 21px}.dkw-royal__crown{font-size:28px}.dkw-royal__grid{gap:22px 10px;padding:9px 1px 15px;grid-template-columns:repeat(2,minmax(0,1fr))}.dkw-royal__card{min-height:298px;padding:24px 10px 14px;border-radius:43% 43% 18px 18px / 10% 10% 17px 17px;outline-offset:-5px}.dkw-royal__finial{top:-11px;width:19px;height:19px}.dkw-royal__finial span{font-size:8px}.dkw-royal__stage{height:145px;flex-basis:145px}.dkw-royal__art{width:min(135px,94%);height:106px}.dkw-royal__pedestal{height:19px}.dkw-royal__copy h3{font-size:clamp(12px,3.7vw,17px);min-height:44px;padding:8px 4px 5px;margin:0 -8px 8px;width:calc(100% + 16px)}.dkw-royal__copy p{font-size:clamp(10px,2.8vw,13px);line-height:1.5}.dkw-royal__rule{margin-bottom:6px}.dkw-royal__engrave{inset:8px 8px auto;height:64px}.dkw-royal__spark--a{top:35px;right:12px}}
+@media(max-width:360px){.dkw-royal__grid{grid-template-columns:1fr;max-width:270px}.dkw-royal__card{min-height:320px}.dkw-royal__art{height:135px;width:170px}.dkw-royal__stage{height:170px;flex-basis:170px}.dkw-royal__copy h3{font-size:18px}.dkw-royal__copy p{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.dkw-royal *{animation:none!important;transition:none!important}.dkw-royal__card{transform:none!important}}
+
+
+/* V4 — Mobile-only compact royal gallery. Desktop and tablet are untouched. */
+@media (max-width: 600px) {
+  .dkw-royal {
+    padding: 16px 9px 15px;
+    margin: 8px auto 13px;
+  }
+  .dkw-royal__heading { margin: 0 auto 15px; }
+  .dkw-royal__crown { font-size: 22px; margin-bottom: 0; }
+  .dkw-royal__titleframe {
+    max-width: 100%; padding: 8px 17px 9px;
+    border-radius: 15px;
+  }
+  .dkw-royal__heading h2 { font-size: clamp(18px, 5vw, 23px); }
+  .dkw-royal__heading p {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .dkw-royal__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+    margin: 0 auto;
+    gap: 15px 9px;
+    padding: 8px 1px 5px;
+  }
+  .dkw-royal__card {
+    min-width: 0;
+    min-height: 228px;
+    height: auto;
+    padding: 16px 7px 11px;
+    border-radius: 43% 43% 15px 15px / 11% 11% 15px 15px;
+    outline-offset: -4px;
+  }
+  .dkw-royal__engrave { inset: 7px 6px auto; height: 45px; }
+  .dkw-royal__finial { top: -9px; width: 16px; height: 16px; }
+  .dkw-royal__finial span { font-size: 7px; }
+  .dkw-royal__spark--a { top: 26px; right: 9px; font-size: 11px; }
+  .dkw-royal__spark--b { top: 46px; left: 8px; font-size: 9px; }
+  .dkw-royal__stage {
+    height: 98px;
+    flex: 0 0 98px;
+    padding-top: 8px;
+  }
+  .dkw-royal__art {
+    width: min(106px, 94%);
+    height: 84px;
+  }
+  .dkw-royal__pedestal { width: 80%; height: 16px; margin-top: -8px; }
+  .dkw-royal__pedestal span { height: 5px; }
+  .dkw-royal__copy { padding-top: 4px; }
+  .dkw-royal__copy h3 {
+    width: calc(100% + 12px);
+    margin: 0 -6px 5px;
+    padding: 7px 3px 5px;
+    border-radius: 22px;
+    min-height: 36px;
+    font-size: clamp(11px, 3.15vw, 14px);
+    line-height: 1.2;
+  }
+  .dkw-royal__copy p {
+    font-size: clamp(9.5px, 2.55vw, 11px);
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .dkw-royal__rule { margin: 0 0 5px; font-size: 8px; }
+  .dkw-royal__foot { display: none; }
+  .dkw-royal__signature { margin: 6px auto 0; font-size: 13px; }
+}
+/* Keep two balanced columns even below 360px; avoid the old one-column rule. */
+@media (max-width: 360px) {
+  .dkw-royal__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+  }
+  .dkw-royal__card { min-height: 220px; padding: 16px 5px 9px; }
+  .dkw-royal__stage { height: 90px; flex-basis: 90px; }
+  .dkw-royal__art { width: min(96px, 94%); height: 77px; }
+  .dkw-royal__copy h3 { font-size: 10.5px; }
+  .dkw-royal__copy p { font-size: 9.3px; }
+}
+/* Touch devices keep shine without hover-induced jumps. */
+@media (max-width: 600px) and (hover: none) {
+  .dkw-royal__card:hover { transform: none; }
+}

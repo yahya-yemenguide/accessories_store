@@ -9,6 +9,8 @@
     @include('front.home.best-sellers')
     @include('front.home.offers')
     @include('front.home.why-choose')
+    @include('front.home.reviews')
+    @include('front.home.footer')
 @endsection
 
 {{-- تنسيقات الأقسام مستقلة حتى تعمل مباشرة مع XAMPP بدون Vite --}}
@@ -25,6 +27,12 @@
     @if (is_file(resource_path('css/front/why-choose.css')))
         <style data-why-choose-inline-css>{!! file_get_contents(resource_path('css/front/why-choose.css')) !!}</style>
     @endif
+    @if (is_file(resource_path('css/front/reviews.css')))
+        <style data-reviews-inline-css>{!! file_get_contents(resource_path('css/front/reviews.css')) !!}</style>
+    @endif
+    @if (is_file(resource_path('css/front/footer.css')))
+        <style data-ak-footer-css>{!! file_get_contents(resource_path('css/front/footer.css')) !!}</style>
+    @endif
 @endpush
 
 @push('scripts')
@@ -39,5 +47,11 @@
     @endif
     @if (is_file(resource_path('js/front/why-choose.js')))
         <script data-why-choose-inline-js>{!! file_get_contents(resource_path('js/front/why-choose.js')) !!}</script>
+    @endif
+    @if (is_file(resource_path('js/front/reviews.js')))
+        <script data-reviews-inline-js>{!! file_get_contents(resource_path('js/front/reviews.js')) !!}</script>
+    @endif
+    @if (is_file(resource_path('js/front/footer.js')))
+        <script data-ak-footer-js>{!! file_get_contents(resource_path('js/front/footer.js')) !!}</script>
     @endif
 @endpush
