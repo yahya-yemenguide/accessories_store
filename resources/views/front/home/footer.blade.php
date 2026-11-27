@@ -34,7 +34,6 @@
       </div>
     </div>
     <div class="akf__divider" aria-hidden="true"><span>✦</span></div>
-    <div class="akf__payment-zone"><span class="akf__payment-title"><i class="bi bi-wallet2" aria-hidden="true"></i> المحافظ الإلكترونية</span><div class="akf__wallets" aria-label="أسماء المحافظ في نموذج التصميم، يُراجع توفرها قبل الإطلاق"><span>جيب <small>Jaib</small></span><span>جوالي <small>Jawali</small></span><span>فلوسك <small>Floosak</small></span><span>ون كاش <small>ONE Cash</small></span></div></div>
     <div class="akf__base"><p>© {{ date('Y') }} دار الكردي للإكسسوارات — جميع الحقوق محفوظة</p><div class="akf__credit"><span><i class="bi bi-code-slash" aria-hidden="true"></i> تصميم وتطوير الموقع بواسطة</span><strong lang="en">Manar Jomaan</strong><a href="tel:773229574" dir="ltr"><i class="bi bi-telephone" aria-hidden="true"></i> 773229574</a></div></div>
   </div>
 </footer>
