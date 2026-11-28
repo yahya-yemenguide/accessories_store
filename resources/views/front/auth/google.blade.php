@@ -1,0 +1,1 @@
+<div class="dk-auth-divider"><span></span>أو<span></span></div><button class="dk-google" type="button" data-google><span class="dk-google-g" aria-hidden="true">G</span> المتابعة باستخدام Google</button>

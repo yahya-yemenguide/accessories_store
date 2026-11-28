@@ -27,3 +27,24 @@ html{scroll-behavior:smooth}
 @media(max-width:1099px){#luxuryCategories,#featuredProducts,#akBestSellers,#akOffers,#darContact,#dkCategoryPlated,#dkCategorySilver,#dkCategoryWatches,#dkCategoryZircon,#dkCategoryRings{scroll-margin-top:130px}}
 @media(max-width:599px){#luxuryCategories,#featuredProducts,#akBestSellers,#akOffers,#darContact,#dkCategoryPlated,#dkCategorySilver,#dkCategoryWatches,#dkCategoryZircon,#dkCategoryRings{scroll-margin-top:120px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dk-nav-dropdown__panel,.dk-nav-dropdown__chevron,.dk-sidebar-categories__toggle .sidebar-chevron{transition:none!important}}
+
+/* Active navigation */
+/* Royal active navigation: scoped to the header and mobile drawer. */
+#siteHeader .desktop-nav-link.active,
+#mobileSidebar .sidebar-link.dk-royal-drawer__link.active {
+    background:linear-gradient(125deg,#30160d 0%,#70442a 47%,#3b1e13 100%)!important;
+    color:#fff3dc!important;
+    box-shadow:inset 0 0 0 1px #d9a75e,inset 0 2px 2px #ffe0a944,0 5px 13px #61300d40,0 0 12px #dba65b40!important;
+}
+#siteHeader .desktop-nav-link.active i,
+#mobileSidebar .sidebar-link.dk-royal-drawer__link.active>span:nth-child(2),
+#mobileSidebar .sidebar-link.dk-royal-drawer__link.active>.dk-royal-drawer__arrow {color:#ffe4af!important;text-shadow:0 1px 3px #32170b;}
+#siteHeader .desktop-nav-link.active {animation:dkRoyalSelect .38s ease-out both;}
+#mobileSidebar .sidebar-link.dk-royal-drawer__link.active::before {opacity:.18;}
+#siteHeader .dk-nav-dropdown__panel>a[aria-current],#mobileSidebar .dk-sidebar-subnav[aria-current] {background:linear-gradient(110deg,#f0d3a6,#fff3dd)!important;box-shadow:inset 0 0 0 1px #c79751;}
+@keyframes dkRoyalSelect {from{filter:brightness(1.35);transform:translateY(-2px)}to{filter:brightness(1);transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){#siteHeader .desktop-nav-link.active{animation:none!important}}
+
+.dk-royal-drawer .sidebar-link.dk-royal-drawer__link.active>span:nth-child(2){color:#fff4dc!important;text-shadow:none!important}
+
+.dk-royal-drawer .sidebar-link.dk-royal-drawer__link.active{background:linear-gradient(130deg,#32190f,#70442a,#3b1e13)!important;color:#fff4dc!important;border-color:#d4a052!important;box-shadow:0 5px 15px #49221155,inset 0 0 0 2px #f1c98955!important}

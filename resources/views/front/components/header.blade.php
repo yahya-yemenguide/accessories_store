@@ -10,7 +10,7 @@
             <span class="kurdi-brand__type"><strong>دار الكردي</strong><small>للإكسسوارات</small></span>
         </a>
         <nav class="mobile-actions" aria-label="روابط الحساب والتسوق">
-            <a class="header-icon-btn header-account" href="#" aria-label="حسابي - قريبًا" data-pending-feature="حسابي"><i class="bi bi-person" aria-hidden="true"></i></a>
+            <a class="header-icon-btn header-account" href="{{ route('front.account') }}" aria-label="تسجيل الدخول" title="تسجيل الدخول"><i class="bi bi-person" aria-hidden="true"></i></a>
             <a class="header-icon-btn" href="#" aria-label="المفضلة - قريبًا" data-pending-feature="المفضلة"><i class="bi bi-heart" aria-hidden="true"></i></a>
             <a class="header-icon-btn cart-btn" href="#" aria-label="سلة التسوق - قريبًا" data-pending-feature="سلة التسوق"><i class="bi bi-cart3" aria-hidden="true"></i><span class="badge-dot" aria-label="صفر عناصر">0</span></a>
         </nav>
@@ -33,6 +33,7 @@
         <a class="desktop-nav-link" href="{{ url('/') }}#akBestSellers" data-nav-section="akBestSellers"><i class="bi bi-award" aria-hidden="true"></i><span>الأكثر مبيعًا</span></a>
         <a class="desktop-nav-link" href="{{ url('/') }}#akOffers" data-nav-section="akOffers"><i class="bi bi-tag-fill" aria-hidden="true"></i><span>العروض والخصومات</span></a>
         <a class="desktop-nav-link" href="{{ url('/') }}#darContact" data-nav-section="darContact"><i class="bi bi-headset" aria-hidden="true"></i><span>تواصل معنا</span></a>
+        <a class="desktop-nav-link" href="{{ route('front.account') }}" data-nav-section="account"><i class="bi bi-person-circle" aria-hidden="true"></i><span>تسجيل الدخول</span></a>
     </nav>
     <span class="royal-center-jewel" aria-hidden="true">✦</span>
 </header>

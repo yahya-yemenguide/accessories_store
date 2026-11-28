@@ -8,8 +8,8 @@
     @include('front.home.featured-products')
     @include('front.home.best-sellers')
     @include('front.home.offers')
-    @include('front.home.why-choose')
     @include('front.home.reviews')
+    @include('front.home.why-choose')
     @include('front.home.contact')
     @include('front.home.footer')
 @endsection
@@ -18,7 +18,17 @@
 @push('styles')
     @foreach (['featured-products.css','best-sellers.css','offers.css','why-choose.css','reviews.css','contact.css','footer.css'] as $styleFile)
         @if (is_file(resource_path('css/front/' . $styleFile)))
-            <style data-front-home-css="{{ $styleFile }}">{!! file_get_contents(resource_path('css/front/' . $styleFile)) !!}</style>
+            @php
+                $homeCss = file_get_contents(resource_path('css/front/' . $styleFile));
+                if ($styleFile === 'best-sellers.css') {
+                    $homeCss = str_replace(
+                        '/accessories_store/public/assets/images/front/best-sellers/',
+                        rtrim(asset('assets/images/front/best-sellers'), '/') . '/',
+                        $homeCss
+                    );
+                }
+            @endphp
+            <style data-front-home-css="{{ $styleFile }}">{!! $homeCss !!}</style>
         @endif
     @endforeach
 @endpush
