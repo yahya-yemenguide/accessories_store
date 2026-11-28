@@ -165,85 +165,65 @@ button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-vis
 
 
 
-/* Synchronized royal motion — a single physical panel carries artwork, frame and copy. */
-.dk-auth-shell{--dk-travel:0;--dk-form-alpha:1;--dk-login-alpha:1;--dk-register-alpha:0;--dk-sweep:1800ms;}
+
+/* YemenGuide native CSS transition: fixed-size curtain, no per-frame geometry. */
+.dk-auth-shell{--dk-sweep:1800ms;--dk-shift:600ms;--dk-delay:1200ms;}
 .dk-auth-shell .dk-auth-curtain,.dk-auth-shell.active .dk-auth-curtain{
- position:absolute;left:0;top:0;width:50%;height:100%;z-index:4;
- transform:translate3d(calc(100% * var(--dk-travel)),0,0);transition:none!important;
- border:0;border-radius:0;background:none;box-shadow:none;overflow:visible;mask:none;clip-path:none;pointer-events:none;
+ position:absolute;left:-250%;top:0;width:300%;height:100%;z-index:3;
+ transform:translate3d(0,0,0);transition:transform 1.8s ease-in-out;
+ border:2px solid #d7a45d;border-radius:100px;overflow:hidden;pointer-events:none;
+ background:linear-gradient(145deg,#210b05,#603018 26%,#321409 45%,#200b05 68%,#6e361b);
+ box-shadow:inset 0 0 0 2px #fff0b8,inset 0 0 0 6px #8d4e20,inset 0 0 0 7px #dcb06b,inset 0 0 38px #0b0301,0 7px 24px #32150766;
 }
-.dk-auth-shell .dk-auth-curtain::before,.dk-auth-shell .dk-auth-curtain::after{content:none!important;display:none!important;}
-.dk-motion-surface{position:absolute;inset:0;isolation:isolate;overflow:hidden;border-radius:0;
- background:radial-gradient(ellipse at var(--px) var(--py),#f6bd6533,transparent 35%),linear-gradient(145deg,#210b05 2%,#603018 26%,#321409 45%,#200b05 68%,#6e361b 100%);}
-.dk-motion-frame{position:absolute;inset:0;width:100%;height:100%;z-index:7;overflow:visible;pointer-events:none;filter:drop-shadow(0 2px 3px #3c1a0b66);}
+.dk-auth-shell.active .dk-auth-curtain{transform:translate3d(100%,0,0)}
+.dk-auth-curtain::before{content:none}
+.dk-auth-curtain::after{inset:8px;border-radius:inherit;pointer-events:none}
 .dk-auth-shell .dk-auth-panel,.dk-auth-shell.active .dk-auth-panel{
- position:absolute;inset:0;width:100%;height:100%;transform:none!important;transition:none!important;
- visibility:visible;mask:none;clip-path:none;overflow:hidden;border-radius:0;z-index:3;
- padding:65px clamp(40px,6vw,82px) 30px;justify-content:flex-start;
+ position:absolute;top:0;left:0;right:auto;width:50%;height:100%;z-index:4;opacity:1;visibility:visible;
+ transition:transform .6s ease-in-out;pointer-events:none;overflow:hidden;
+ padding:68px clamp(28px,4vw,52px) 32px;justify-content:flex-start;
 }
-.dk-auth-shell .dk-auth-panel.dk-panel-left{opacity:var(--dk-login-alpha);}
-.dk-auth-shell .dk-auth-panel.dk-panel-right{opacity:var(--dk-register-alpha);}
-.dk-auth-shell .dk-auth-panel[aria-hidden="true"]{pointer-events:none;}
-.dk-auth-panel:before{left:0;right:0;bottom:0;height:46%;border-radius:0;}
-.dk-auth-panel:after{inset:0;border-radius:0;background:radial-gradient(ellipse at 50% 15%,#f7b96921,transparent 60%);}
+.dk-auth-shell .dk-panel-left{transform:translate3d(0,0,0);transition-delay:1.2s}
+.dk-auth-shell.active .dk-panel-left{transform:translate3d(-100%,0,0);transition-delay:.6s}
+.dk-auth-shell .dk-panel-right{transform:translate3d(200%,0,0);transition-delay:.6s}
+.dk-auth-shell.active .dk-panel-right{transform:translate3d(100%,0,0);transition-delay:1.2s}
+.dk-auth-panel:before{left:10px;right:10px;bottom:10px;height:45%;border-radius:0 0 84px 15px;}
+.dk-panel-right:before{border-radius:0 0 15px 84px;}
 .dk-auth-shell .dk-auth-form,.dk-auth-shell.active .dk-auth-form{
- top:0;right:0;transform:translate3d(calc(-100% * var(--dk-travel)),0,0);transition:none!important;background:transparent;
- opacity:var(--dk-form-alpha);}
-.dk-auth-shell.is-switching .dk-auth-content section.is-entering>*{animation:none!important;}
+ right:0;top:0;transform:translate3d(0,0,0);transition:transform .6s ease-in-out 1.2s;opacity:1;visibility:visible;}
+.dk-auth-shell.active .dk-auth-form{transform:translate3d(-100%,0,0)}
+.dk-auth-shell .dk-auth-form.is-covered{visibility:hidden!important;}
+.dk-auth-shell.is-switching .dk-auth-content section>*{animation:none!important}
 .dk-auth-shell.is-switching .dk-auth-engraving,.dk-auth-shell.is-switching .dk-auth-orbit{animation-play-state:paused;}
-.dk-auth-shell.is-switching .dk-auth-form{pointer-events:none;}
+.dk-auth-shell .dk-auth-panel:before{transition:none;}
+.dk-native-arch{display:none;}
 @media(max-width:760px){
- .dk-auth-shell .dk-auth-curtain,.dk-auth-shell.active .dk-auth-curtain{width:100%;height:25%;top:0;left:0;transform:translate3d(0,calc(300% * var(--dk-travel)),0);}
- .dk-auth-shell .dk-auth-panel,.dk-auth-shell.active .dk-auth-panel{padding:14px 16px;justify-content:center;}
- .dk-auth-panel:before{left:0;right:0;bottom:0;height:68%;}
- .dk-auth-panel:after{background:radial-gradient(ellipse at center,#32130785 0%,#32130744 42%,transparent 75%);}
+ .dk-auth-shell{height:800px;}
+ .dk-auth-shell .dk-auth-curtain,.dk-auth-shell.active .dk-auth-curtain{
+  left:0;top:-268%;width:100%;height:300%;border:0;border-radius:0;box-shadow:none;overflow:visible;background:none;
+  transform:translate3d(0,0,0);}
+ .dk-auth-shell.active .dk-auth-curtain{transform:translate3d(0,112%,0)}
+ .dk-auth-curtain::after,.dk-auth-curtain>.dk-auth-engraving,.dk-auth-curtain>.dk-auth-orbit{display:none;}
+ .dk-native-arch{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 3px 3px #49290f66);}
+ .dk-auth-shell .dk-auth-panel,.dk-auth-shell.active .dk-auth-panel{width:100%;height:32%;left:0;top:0;padding:12px 16px 46px;justify-content:center;}
+ .dk-auth-shell .dk-panel-left{transform:translate3d(0,0,0);transition-delay:1.2s;}
+ .dk-auth-shell.active .dk-panel-left{transform:translate3d(0,-100%,0);transition-delay:.6s;}
+ .dk-auth-shell .dk-panel-right{top:100%;transform:translate3d(0,0,0);transition-delay:.6s;padding:46px 16px 12px;}
+ .dk-auth-shell.active .dk-panel-right{top:100%;transform:translate3d(0,-100%,0);transition-delay:1.2s;padding:46px 16px 12px;}
+ .dk-auth-panel:before{left:9px;right:9px;bottom:36px;height:62%;border-radius:0;background-size:auto 100%;}
+ .dk-panel-right:before{bottom:10px;}
+ .dk-auth-panel:after{inset:30px 10px;background:radial-gradient(ellipse at center,#32130785 0%,#32130744 42%,transparent 75%);}
  .dk-panel-brand img{width:44px;height:40px;}
  .dk-auth-panel h2{margin-top:4px;}
- .dk-auth-shell .dk-auth-form,.dk-auth-shell.active .dk-auth-form{top:25%;right:0;height:75%;transform:translate3d(0,calc(-33.3333333% * var(--dk-travel)),0);padding-top:20px;padding-bottom:16px;}
-}
-
-/* Continuous royal sweep: full coverage at midpoint; forms swap behind it. */
-.dk-auth-shell{--dk-start:0%;--dk-size:50%;}
-.dk-auth-shell .dk-auth-curtain,.dk-auth-shell.active .dk-auth-curtain{left:var(--dk-start);width:var(--dk-size);transform:none;}
-.dk-auth-shell .dk-auth-form,.dk-auth-shell.active .dk-auth-form{opacity:1;transform:none;right:0;}
-.dk-auth-shell.active .dk-auth-form{right:50%;}
-/* Keep both greeting layouts stable while the curtain expands. */
-.dk-auth-shell .dk-auth-panel,.dk-auth-shell.active .dk-auth-panel{width:min(100%,530px);}
-.dk-auth-shell .dk-auth-panel.dk-panel-left{left:0;right:auto;}
-.dk-auth-shell .dk-auth-panel.dk-panel-right{right:0;left:auto;}
-@media(max-width:760px){
- .dk-auth-shell{height:800px;--dk-size:32%;}
- .dk-auth-shell .dk-auth-curtain,.dk-auth-shell.active .dk-auth-curtain{left:0;top:var(--dk-start);width:100%;height:var(--dk-size);transform:none;}
- .dk-auth-shell .dk-auth-form,.dk-auth-shell.active .dk-auth-form{top:32%;height:68%;right:0;transform:none;padding-block:12px;}
- .dk-auth-shell.active .dk-auth-form{top:0;}
- .dk-auth-shell .dk-auth-panel,.dk-auth-shell.active .dk-auth-panel{width:100%;height:min(100%,256px);padding:12px 16px 38px;}
- .dk-auth-shell .dk-auth-panel.dk-panel-left{top:0;bottom:auto;}
- .dk-auth-shell .dk-auth-panel.dk-panel-right{top:auto;bottom:0;padding:38px 16px 12px;}
+ .dk-auth-shell .dk-auth-form,.dk-auth-shell.active .dk-auth-form{top:32%;height:68%;right:0;transform:translate3d(0,0,0);padding-block:12px;}
+ .dk-auth-shell.active .dk-auth-form{transform:translate3d(0,-47.0588235294%,0);}
  .dk-auth-content{margin-block:auto;}
  .dk-auth-content section[data-view="login"] > h1,.dk-auth-content section[data-view="register"] > h1{margin-bottom:12px;}
 }
-@media(max-width:360px){.dk-auth-shell{height:820px}.dk-auth-shell .dk-auth-panel,.dk-auth-shell.active .dk-auth-panel{height:min(100%,262px)}}
-
-/* Final motion correction: both complete greetings share the same physical anchor.
-   No independent slide, scaling, or early artwork movement. */
-.dk-auth-shell .dk-auth-panel.dk-panel-left,
-.dk-auth-shell .dk-auth-panel.dk-panel-right{
- left:50%;right:auto;top:0;bottom:auto;
- transform:translateX(-50%)!important;
- width:min(100%,530px);
-}
-@media(min-width:761px){
- .dk-auth-shell .dk-auth-panel{height:100%;}
- .dk-motion-jewel-a,.dk-motion-jewel-b{display:none;}
-}
+@media(max-width:360px){.dk-auth-shell{height:820px;}}
+@media(prefers-reduced-motion:reduce){.dk-auth-shell *{transition:none!important;animation:none!important;}}
+/* Keep the mobile artwork inside the gold edge, with no square corner spill. */
 @media(max-width:760px){
- .dk-auth-shell .dk-auth-panel.dk-panel-left,
- .dk-auth-shell .dk-auth-panel.dk-panel-right{
-   left:0;right:auto;top:50%;bottom:auto;
-   width:100%;height:min(100%,256px);
-   transform:translateY(-50%)!important;
-   padding:20px 16px;
- }
- .dk-auth-shell:not(.active) .dk-auth-panel.dk-panel-left{padding-bottom:42px;padding-top:8px;}
- .dk-auth-shell.active .dk-auth-panel.dk-panel-right{padding-top:42px;padding-bottom:8px;}
+ .dk-panel-left:before{bottom:46px;left:14px;right:14px;border-radius:0 0 18px 18px;}
+ .dk-panel-right:before{bottom:12px;left:14px;right:14px;border-radius:0 0 15px 15px;}
 }

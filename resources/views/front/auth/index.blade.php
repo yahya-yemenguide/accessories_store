@@ -62,9 +62,7 @@
         <a class="dk-auth-home" href="{{ url('/') }}"><i class="bi bi-house-door"></i> العودة إلى المتجر</a>
       </div>
     </div>
-    <div class="dk-auth-curtain" id="dkMotionPanel">
-      <div class="dk-motion-surface">
-        <div class="dk-auth-engraving" aria-hidden="true"></div><div class="dk-auth-orbit" aria-hidden="true"></div>
+    <div class="dk-auth-curtain" aria-hidden="true"><div class="dk-auth-engraving"></div><div class="dk-auth-orbit"></div><svg class="dk-native-arch" viewBox="0 0 400 2400" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="dkNativeBrown" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35170c"/><stop offset=".5" stop-color="#6d3d20"/><stop offset="1" stop-color="#291109"/></linearGradient><linearGradient id="dkNativeGold" x1="0%" y1="0%" x2="100%" y2="0%"><stop stop-color="#92501d"/><stop offset=".25" stop-color="#ffe7a2"/><stop offset=".5" stop-color="#b87932"/><stop offset=".75" stop-color="#fff1c3"/><stop offset="1" stop-color="#92501d"/></linearGradient></defs><path d="M 8 62 Q 8 46 26 43 C 115 28 154 36 178 24 Q 190 19 200 5 Q 210 19 222 24 C 246 36 285 28 374 43 Q 392 46 392 62 L 392 2338 Q 392 2354 374 2357 C 285 2372 246 2364 222 2376 Q 210 2381 200 2395 Q 190 2381 178 2376 C 154 2364 115 2372 26 2357 Q 8 2354 8 2338 Z" fill="url(#dkNativeBrown)" stroke="#75431f" stroke-width="8" vector-effect="non-scaling-stroke"/><path d="M 8 62 Q 8 46 26 43 C 115 28 154 36 178 24 Q 190 19 200 5 Q 210 19 222 24 C 246 36 285 28 374 43 Q 392 46 392 62 L 392 2338 Q 392 2354 374 2357 C 285 2372 246 2364 222 2376 Q 210 2381 200 2395 Q 190 2381 178 2376 C 154 2364 115 2372 26 2357 Q 8 2354 8 2338 Z" fill="none" stroke="url(#dkNativeGold)" stroke-width="5" vector-effect="non-scaling-stroke"/><path d="M 8 62 Q 8 46 26 43 C 115 28 154 36 178 24 Q 190 19 200 5 Q 210 19 222 24 C 246 36 285 28 374 43 Q 392 46 392 62 L 392 2338 Q 392 2354 374 2357 C 285 2372 246 2364 222 2376 Q 210 2381 200 2395 Q 190 2381 178 2376 C 154 2364 115 2372 26 2357 Q 8 2354 8 2338 Z" fill="none" stroke="#fff3ce" stroke-width="1" vector-effect="non-scaling-stroke"/><path d="M200 1 L209 13 L200 25 L191 13 Z M200 2375 L209 2387 L200 2399 L191 2387 Z" fill="url(#dkNativeGold)" stroke="#fff1c9" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg></div>
     <div class="dk-auth-panel dk-panel-left" data-panel="login">
       <div class="dk-panel-brand"><img src="{{ asset('assets/images/front/dar-alkurdi-mark.png') }}" alt="" width="90" height="82"><span class="dk-panel-name">دار الكردي</span><small>للإكسسوارات</small></div>
       <div class="dk-jewel-stage" aria-hidden="true"><div class="dk-jewel-ring"></div><img src="{{ asset('assets/images/front/products/featured-2.webp') }}" alt=""><span class="dk-jewel-spark">✦</span></div>
@@ -74,16 +72,6 @@
       <div class="dk-panel-brand"><img src="{{ asset('assets/images/front/dar-alkurdi-mark.png') }}" alt="" width="90" height="82"><span class="dk-panel-name">دار الكردي</span><small>للإكسسوارات</small></div>
       <div class="dk-jewel-stage" aria-hidden="true"><div class="dk-jewel-ring"></div><img src="{{ asset('assets/images/front/products/featured-3.webp') }}" alt=""><span class="dk-jewel-spark">✦</span></div>
       <h2>أهلًا بكِ في عالمنا</h2><p>ابدئي حكاية أناقتكِ مع دار الكردي.</p>
-    </div>
-      </div>
-      <svg class="dk-motion-frame" aria-hidden="true" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="dkMotionGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff2ba"/><stop offset="20%" stop-color="#a56525"/><stop offset="42%" stop-color="#ffdf8e"/><stop offset="64%" stop-color="#b37931"/><stop offset="85%" stop-color="#fff0b9"/><stop offset="100%" stop-color="#9c5b20"/></linearGradient></defs>
-        <path class="dk-motion-edge-shadow" fill="none" stroke="#794219" stroke-width="7"/>
-        <path class="dk-motion-edge-gold" fill="none" stroke="url(#dkMotionGold)" stroke-width="5"/>
-        <path class="dk-motion-edge-light" fill="none" stroke="#fff0c3" stroke-width="1"/>
-        <g class="dk-motion-jewel-a"><path d="M0 -10 L8 0 L0 10 L-8 0 Z" fill="url(#dkMotionGold)" stroke="#fff1c9" stroke-width="1.5"/><path d="M0 -10 L3 0 L0 10 L-3 0 Z M-8 0 H8" fill="none" stroke="#fff8e0" stroke-width=".8"/></g>
-        <g class="dk-motion-jewel-b"><path d="M0 -10 L8 0 L0 10 L-8 0 Z" fill="url(#dkMotionGold)" stroke="#fff1c9" stroke-width="1.5"/><path d="M0 -10 L3 0 L0 10 L-3 0 Z M-8 0 H8" fill="none" stroke="#fff8e0" stroke-width=".8"/></g>
-      </svg>
     </div>
   </main>
   <script>{!! file_get_contents(resource_path('js/front/auth.js')) !!}</script>

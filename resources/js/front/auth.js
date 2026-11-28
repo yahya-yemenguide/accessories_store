@@ -13,85 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const timers = new Map();
   const announce = text => { status.textContent = text; status.hidden = !text; };
   const setInteractive = (el, yes) => { el.inert = !yes; el.setAttribute('aria-hidden', String(!yes)); };
-  let motionFrame = 0, motionProgress = 0;
-  const motionPanel = shell.querySelector('#dkMotionPanel');
-  const surface = motionPanel.querySelector('.dk-motion-surface');
-  const frameSvg = motionPanel.querySelector('.dk-motion-frame');
-  const edgePaths = [...frameSvg.querySelectorAll('path[class^="dk-motion-edge-"]')];
-  const jewelA = frameSvg.querySelector('.dk-motion-jewel-a');
-  const jewelB = frameSvg.querySelector('.dk-motion-jewel-b');
-  const mobile = matchMedia('(max-width:760px)');
-  const duration = 1800;
-  const clamp = x => Math.max(0,Math.min(1,x));
-  const ease = x => (1-Math.cos(Math.PI*x))/2;
-  // The outline and the gold stroke share exactly the same Bézier path.
-  function paintMotion(p) {
-    motionProgress = p;
-    const isMobile = mobile.matches;
-    const fraction = isMobile ? .32 : .5;
-    // Same continuous oversized sweep as the original reference: expand,
-    // cover the full card, swap the form, then uncover the opposite side.
-    const travel = 4 - 2 * fraction;
-    const start = Math.max(0, fraction - 3 + travel * p);
-    const end = Math.min(1, fraction + travel * p);
-    const size = end - start;
-    shell.style.setProperty('--dk-travel',p.toFixed(6));
-    shell.style.setProperty('--dk-start',`${start*100}%`);
-    shell.style.setProperty('--dk-size',`${size*100}%`);
-    // Keep the entire greeting and artwork attached to the center of the curtain.
-    // Change the greeting only while the curtain fully covers the form.
-    const a = 1-clamp((p-.43)/.07), b = clamp((p-.50)/.07);
-    shell.style.setProperty('--dk-login-alpha',a.toFixed(4));
-    shell.style.setProperty('--dk-register-alpha',b.toFixed(4));
-    const w=motionPanel.clientWidth, h=motionPanel.clientHeight;
-    if(!w||!h)return;
-    const m=5, r=Math.min(17,w/10,h/10), W=w-m, H=h-m;
-    const f=n=>Number(n.toFixed(2));
-    const pt=(x,y)=>`${f(x)} ${f(y)}`;
-    let d, ax,ay,bx,by;
-    if(mobile.matches){
-      const depth=Math.min(53,h*.23), top=depth*clamp(start/(1-fraction)), bottom=depth*clamp((1-end)/(1-fraction));
-      const t=m+top, bot=H-bottom;
-      d=`M ${pt(m+r,t)} Q ${pt(w*.24,t-top*.44)} ${pt(w*.39,t-top*.44)} Q ${pt(w*.46,t-top*.44)} ${pt(w*.5,m)} Q ${pt(w*.54,t-top*.44)} ${pt(w*.61,t-top*.44)} Q ${pt(w*.76,t-top*.44)} ${pt(W-r,t)} Q ${pt(W,t)} ${pt(W,t+r)} L ${pt(W,bot-r)} Q ${pt(W,bot)} ${pt(W-r,bot)} Q ${pt(w*.76,bot+bottom*.44)} ${pt(w*.61,bot+bottom*.44)} Q ${pt(w*.54,bot+bottom*.44)} ${pt(w*.5,H)} Q ${pt(w*.46,bot+bottom*.44)} ${pt(w*.39,bot+bottom*.44)} Q ${pt(w*.24,bot+bottom*.44)} ${pt(m+r,bot)} Q ${pt(m,bot)} ${pt(m,bot-r)} L ${pt(m,t+r)} Q ${pt(m,t)} ${pt(m+r,t)} Z`;
-      ax=w/2;ay=H-3;bx=w/2;by=m+3;
-    }else{
-      // Restore the previous rounded desktop edge, with no pointed side or jewel.
-      const l=m, q=W, t=m, bot=H;
-      const radius=Math.min(100,w*.23,h*.20);
-      const left=r+(radius-r)*clamp(start/(1-fraction));
-      const right=r+(radius-r)*clamp((1-end)/(1-fraction));
-      d=`M ${pt(l+left,t)} L ${pt(q-right,t)} Q ${pt(q,t)} ${pt(q,t+right)} L ${pt(q,bot-right)} Q ${pt(q,bot)} ${pt(q-right,bot)} L ${pt(l+left,bot)} Q ${pt(l,bot)} ${pt(l,bot-left)} L ${pt(l,t+left)} Q ${pt(l,t)} ${pt(l+left,t)} Z`;
-      ax=W-3;ay=h/2;bx=m+3;by=h/2;
-    }
-    surface.style.clipPath=`path('${d}')`;
-    frameSvg.setAttribute('viewBox',`0 0 ${w} ${h}`);
-    edgePaths.forEach(path=>path.setAttribute('d',d));
-    jewelA.setAttribute('transform',`translate(${ax} ${ay})`);jewelA.style.opacity=isMobile?clamp((1-end)/(1-fraction)).toFixed(3):0;
-    jewelB.setAttribute('transform',`translate(${bx} ${by})`);jewelB.style.opacity=isMobile?clamp(start/(1-fraction)).toFixed(3):0;
-  }
-  const redraw=()=>paintMotion(motionProgress);
-  window.addEventListener('resize',redraw,{passive:true});
-  if(typeof ResizeObserver!=='undefined')new ResizeObserver(()=>{if(!switching)redraw();}).observe(shell);
-  function animateMotion(target,reveal,finish){
-    cancelAnimationFrame(motionFrame);
-    const from=motionProgress, start=performance.now();let swapped=false;
-    function tick(now){
-      const t=clamp((now-start)/duration), p=from+(target-from)*ease(t);
-      paintMotion(p);
-      if(!swapped&&t>=.5){swapped=true;reveal();}
-      if(t<1)motionFrame=requestAnimationFrame(tick);
-      else{paintMotion(target);if(!swapped)reveal();finish();}
-    }
-    motionFrame=requestAnimationFrame(tick);
-  }
-  let swapTimer = 0;
+  // One class drives the native CSS animation; no layout reads or redraw loop.
   function show(name, focus = true) {
     const next = views.find(v => v.dataset.view === name);
     if (!next || switching) return;
     const register = ['register','verify'].includes(name);
     const targetSide = register ? 'register' : 'login';
     const moved = shell.classList.contains('active') !== register;
-    clearTimeout(timer); clearTimeout(focusTimer); clearTimeout(swapTimer);
+    clearTimeout(timer); clearTimeout(focusTimer);
     current = name;
     const previous = document.activeElement;
     if (previous && shell.contains(previous)) previous.blur();
@@ -99,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
       next.closest('.dk-auth-content').appendChild(status);
       views.forEach(v => { v.hidden = v !== next; v.classList.remove('is-entering'); });
       sides.forEach(s => s.classList.toggle('is-covered',s.dataset.side !== targetSide));
-      requestAnimationFrame(() => next.classList.add('is-entering'));
     };
     const finish = () => {
       switching = false; shell.classList.remove('is-switching');
@@ -110,9 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (moved && !reduced.matches) {
       switching = true; shell.classList.add('is-switching');
       sides.forEach(s => setInteractive(s,false)); panels.forEach(p => setInteractive(p,false));
-      animateMotion(register?1:0,()=>{shell.classList.toggle('active',register);reveal();},finish);
+      shell.classList.toggle('active',register);
+      // Swap hidden forms while the oversized curtain covers both halves.
+      timer = setTimeout(reveal, 900);
+      focusTimer = setTimeout(finish, 1800);
     } else {
-      shell.classList.toggle('active',register); paintMotion(register?1:0); reveal(); finish();
+      shell.classList.toggle('active',register); reveal(); finish();
     }
     announce(baseStatus);
   }
