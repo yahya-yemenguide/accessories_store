@@ -1,0 +1,13 @@
+# Dar Al-Kurdi / Laravel 12 / InfinityFree
+# IMPORTANT: install this at htdocs/.htaccess, KEEP public/.htaccess unchanged.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Block direct access to private project folders and sensitive dotfiles.
+RewriteRule ^(?:app|bootstrap|config|database|resources|routes|storage|tests|vendor)(?:/|$) - [F,NC]
+RewriteRule ^(?:\.git(?:/|$)|\.env(?:\..*)?$|artisan$|composer\.(?:json|lock)$|package(?:-lock)?\.json$|phpunit\.xml$|vite\.config\.js$|README\.md$|install-royal-scrollbar\.php$) - [F,NC]
+
+# Keep the public document folder the only routable entrypoint.
+RewriteRule ^public/ - [L]
+RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
